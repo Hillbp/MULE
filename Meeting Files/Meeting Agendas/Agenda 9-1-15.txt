@@ -1,0 +1,13 @@
+Agenda 9-1-15
+CULC 246, 5-6PM
+
+*Explain/ review project requirements
+    *Discuss "person numbers"
+*Ensure all members have/ know how to acquire necessary programs/ files
+    *GitHub installation/ usage
+    *(Optional) IntelliJ
+    *Gradle requirements/ how to set up a build file
+*Discuss project completion timeline
+    *Should we have another meeting this week?
+    *Extra credit?
+    *Working ahead of schedule? (Future milestones)
