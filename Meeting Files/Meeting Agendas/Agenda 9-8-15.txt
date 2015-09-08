@@ -1,0 +1,23 @@
+Agenda 9-8-15
+CULC 248, 5-6PM
+
+*Review previous milestone
+    *Address Gradle issues
+    
+*Go over M3 requirements
+    *Context Diagram
+    *10 use cases (diagram)
+    *Individual use case detailing
+*Implementation
+    *Game config screen
+        *Difficulty
+        *Map type
+        *Number of players
+    *Player config screen
+        *Name
+        *Race
+        *Color
+    *Placeholder screen
+
+*Discuss job delegation
+*Discuss next meeting/ possibility for working ahead of schedule
