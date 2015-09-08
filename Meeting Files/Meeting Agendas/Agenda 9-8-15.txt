@@ -20,4 +20,6 @@ CULC 248, 5-6PM
     *Placeholder screen
 
 *Discuss job delegation
+    *Group project delegation
+    *Individual use case descriptions
 *Discuss next meeting/ possibility for working ahead of schedule
