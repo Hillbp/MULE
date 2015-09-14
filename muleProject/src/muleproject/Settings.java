@@ -19,8 +19,8 @@ public class Settings {
      */
     private enum Maptype = {
         STANDARD,
-        MOUNTAIN,
-        WETLAND;
+        WETLAND,
+        MOUNTAIN;
     }
 
     /**
