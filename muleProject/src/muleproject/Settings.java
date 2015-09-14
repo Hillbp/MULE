@@ -1,3 +1,5 @@
+package muleproject;
+
 /**
  * @author Brandon Hill
  * @version 1.0
@@ -17,7 +19,7 @@ public class Settings {
      * <p>
      * An enum that contains the three possible map types that a player can choose.
      */
-    protected enum Maptype {
+    public enum Maptype {
         STANDARD,
         WETLAND,
         MOUNTAIN;
@@ -30,7 +32,7 @@ public class Settings {
      * <p>
      * In this project, only EASY difficulty will actually be implemented.
      */
-    protected enum Difficulty {
+    public enum Difficulty {
         EASY,
         NORMAL,
         TOURNAMENT
