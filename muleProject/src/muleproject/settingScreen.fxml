@@ -1,11 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muleproject.SettingScreenController">
-    
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muleproject.SettingScreenController">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="167.0" layoutY="30.0" text="Game Settings" textAlignment="CENTER" textFill="#10901f">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
+            <Label layoutX="495.0" layoutY="31.0" text="Difficulty" textFill="#10901f">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="47.0" text="Beginner" textFill="#10901f" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="131.0" AnchorPane.topAnchor="47.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="47.0" text="Standard" textFill="#10901f" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="537.0" AnchorPane.topAnchor="47.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="248.0" layoutY="47.0" text="Tournament" textAlignment="RIGHT" textFill="#10901f" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="47.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
+            <Label layoutX="513.0" layoutY="31.0" text="Map Type" textFill="#10901f">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="131.0" layoutY="43.0" text="Wetlands" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="131.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="43.0" text="Standard" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="43.0" text="Mountainous" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Label layoutX="438.0" layoutY="31.0" text="Number of Players" textFill="#10901f">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="43.0" text="1" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="107.0" layoutY="43.0" text="2" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="108.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="198.0" layoutY="43.0" text="3" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="198.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="43.0" text="4" textFill="#10901f" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="287.0" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="60.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="532.0" layoutY="12.0" mnemonicParsing="false" text="OK" textFill="#0b8d43" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+               <font>
+                  <Font name="Arial" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
