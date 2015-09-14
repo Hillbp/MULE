@@ -8,7 +8,12 @@ package muleproject;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+;
 /**
  * FXML Controller class
  *
@@ -16,12 +21,40 @@ import javafx.fxml.Initializable;
  */
 public class SettingScreenController implements Initializable {
 
+    @FXML
+    private Slider difficultySlider;
+    
+    @FXML
+    private Slider mapSlider;
+    
+    @FXML
+    private Slider numPlayerSlider;
+    
+    private Stage dialogStage;
+    private boolean okClicked = false;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+
+    }
     
+    /**
+     * Sets the stage of this dialog.
+     * 
+     * @param dialogStage
+     */
+    public void setdialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+    }
+
+    /**
+     * Called when the user clicks ok.
+     */
+    @FXML
+    private void handleOk() {
+        okClicked = true;
+        dialogStage.close();
+    }
 }
