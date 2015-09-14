@@ -17,7 +17,7 @@ public class Settings {
      * <p>
      * An enum that contains the three possible map types that a player can choose.
      */
-    private enum Maptype = {
+    private enum Maptype {
         STANDARD,
         WETLAND,
         MOUNTAIN;
@@ -30,7 +30,7 @@ public class Settings {
      * <p>
      * In this project, only EASY difficulty will actually be implemented.
      */
-    private enum Difficulty = {
+    private enum Difficulty {
         EASY,
         NORMAL,
         TOURNAMENT
@@ -58,7 +58,7 @@ public class Settings {
      * @param num The number of players the player(s) selected at startup (1-4)
      */
     public void setNumPlayers(int num) {
-        numPlayers = i;
+        numPlayers = num;
     }
 
     /**
