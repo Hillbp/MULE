@@ -17,7 +17,7 @@ public class Settings {
      * <p>
      * An enum that contains the three possible map types that a player can choose.
      */
-    private enum Maptype {
+    protected enum Maptype {
         STANDARD,
         WETLAND,
         MOUNTAIN;
@@ -30,7 +30,7 @@ public class Settings {
      * <p>
      * In this project, only EASY difficulty will actually be implemented.
      */
-    private enum Difficulty {
+    protected enum Difficulty {
         EASY,
         NORMAL,
         TOURNAMENT
