@@ -12,7 +12,7 @@ public class Settings {
      * <p>
      * The number of human players for this game. Determined by the player(s) at the startup screen.
      */
-    private int numPlayers;
+    private static int numPlayers;
 
     /**
      * The type of the map
@@ -41,34 +41,34 @@ public class Settings {
     /**
      * The difficulty selected by the player(s)
      */
-    private Difficulty diff;
+    private static Difficulty diff;
     /**
      * The type of map selected by the player
      */
-    private Maptype map;
+    private static Maptype map;
 
     /**
      * Sets the difficulty of the game
-     * @param diff The difficulty that the player(s) selected at startup
+     * @param difficult The difficulty that the player(s) selected at startup
      */
-    public void setDifficulty(Difficulty diff) {
-        this.diff = diff;
+    public static void setDifficulty(Difficulty difficult) {
+        diff = difficult;
     }
 
     /**
      * Sets the number of human players for the game
      * @param num The number of players the player(s) selected at startup (1-4)
      */
-    public void setNumPlayers(int num) {
+    public static void setNumPlayers(int num) {
         numPlayers = num;
     }
 
     /**
      * Sets the map type for the game
-     * @param map The type of map the player(s) selected at startup
+     * @param mapper The type of map the player(s) selected at startup
      */
-    public void setMapType(Maptype map) {
-        this.map = map;
+    public static void setMapType(Maptype mapper) {
+        map = mapper;
     }
 
     /**
