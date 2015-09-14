@@ -20,7 +20,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
+            <Slider fx:id="difficultySlider" blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
             <Label layoutX="495.0" layoutY="31.0" text="Difficulty" textFill="#10901f">
                <font>
                   <Font name="DejaVu Sans Mono Bold" size="15.0" />
@@ -45,7 +45,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
+            <Slider fx:id="mapSlider" blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="3.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" value="1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="27.0" />
             <Label layoutX="513.0" layoutY="31.0" text="Map Type" textFill="#10901f">
                <font>
                   <Font name="DejaVu Sans Mono Bold" size="15.0" />
@@ -70,7 +70,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Slider blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Slider fx:id="numPlayerSlider" blockIncrement="1.0" layoutX="14.0" layoutY="27.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" prefHeight="27.0" prefWidth="283.0" showTickMarks="true" snapToTicks="true" value="1.0" />
             <Label layoutX="438.0" layoutY="31.0" text="Number of Players" textFill="#10901f">
                <font>
                   <Font name="DejaVu Sans Mono Bold" size="15.0" />
@@ -100,7 +100,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="60.0" prefWidth="600.0">
          <children>
-            <Button layoutX="532.0" layoutY="12.0" mnemonicParsing="false" text="OK" textFill="#0b8d43" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+            <Button layoutX="532.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleOk" text="OK" textFill="#0b8d43" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
                <font>
                   <Font name="Arial" size="19.0" />
                </font>
