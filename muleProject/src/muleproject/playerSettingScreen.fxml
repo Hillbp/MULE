@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muleproject.PlayerSettingScreenController">
    <children>
       <AnchorPane prefHeight="145.0" prefWidth="600.0">
          <children>
@@ -35,14 +35,14 @@
                <children>
                   <MenuButton layoutX="51.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Packer" />
-                      <MenuItem mnemonicParsing="false" text="Spheroid" />
-                        <MenuItem mnemonicParsing="false" text="Humanoid" />
-                        <MenuItem mnemonicParsing="false" text="Leggite" />
-                        <MenuItem mnemonicParsing="false" text="Flapper" />
-                        <MenuItem mnemonicParsing="false" text="Bonzoid" />
-                        <MenuItem mnemonicParsing="false" text="Mechtron" />
-                        <MenuItem mnemonicParsing="false" text="Gollumer" />
+                      <MenuItem mnemonicParsing="false" onAction="#handlePacker" text="Packer" />
+                      <MenuItem mnemonicParsing="false" onAction="#handleSpheroid" text="Spheroid" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleHumanoid" text="Humanoid" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleLeggite" text="Leggite" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleFlapper" text="Flapper" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleBonzoid" text="Bonzoid" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMechtron" text="Mechtron" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleGollumer" text="Gollumer" />
                     </items>
                   </MenuButton>
                   <Label layoutX="80.0" layoutY="14.0" text="Race">
