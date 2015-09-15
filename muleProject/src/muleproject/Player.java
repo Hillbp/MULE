@@ -1,16 +1,18 @@
+import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public abstract class Player {
+    protected StringProperty type;
+    protected StringProperty name;
+    protected StringProperty race;
+    protected StringProperty color;
 
-	protected String type;
-	protected String name;
-	protected String race;
-	protected String color;
-
-	public Player(String name, String race, String color, String type) {
-		this.name = name;
-		this.race = race;
-		this.color = color;
-		this.type = type;
-	}
+    public Player(String name, String race, String color, String type) {
+	this.name = new SimpleStringProperty(name);
+	this.race = new SimpleStringProperty(race);
+	this.color = new SimpleStringProperty(color);
+	this.type = new SimpleStringProperty(type);
+    }
 
 	/*Here there will be other methods that apply to both Player types,
 		such as health, money, etc.*/
