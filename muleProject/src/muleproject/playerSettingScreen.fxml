@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="145.0" prefWidth="600.0">
@@ -61,7 +60,7 @@
       </HBox>
       <AnchorPane prefHeight="60.0" prefWidth="200.0">
          <children>
-            <Button layoutX="512.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="74.0" text="Play">
+            <Button layoutX="512.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="74.0" text="Next">
                <font>
                   <Font name="DejaVu Sans Mono Bold" size="19.0" />
                </font>
