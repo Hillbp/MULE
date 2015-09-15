@@ -35,8 +35,14 @@
                <children>
                   <MenuButton layoutX="51.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                      <MenuItem mnemonicParsing="false" text="Packer" />
+                      <MenuItem mnemonicParsing="false" text="Spheroid" />
+                        <MenuItem mnemonicParsing="false" text="Humanoid" />
+                        <MenuItem mnemonicParsing="false" text="Leggite" />
+                        <MenuItem mnemonicParsing="false" text="Flapper" />
+                        <MenuItem mnemonicParsing="false" text="Bonzoid" />
+                        <MenuItem mnemonicParsing="false" text="Mechtron" />
+                        <MenuItem mnemonicParsing="false" text="Gollumer" />
                     </items>
                   </MenuButton>
                   <Label layoutX="80.0" layoutY="14.0" text="Race">
