@@ -5,10 +5,15 @@
  */
 package muleproject;
 
+import java.io.IOException;
+import javafx.scene.Parent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.MenuButton;
 import javafx.stage.Stage;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -29,8 +34,7 @@ public class SettingScreenController {
     @FXML
     private Slider numPlayerSlider;
     
-    private Stage dialogStage;
-    private boolean okClicked = false;
+    private Stage dialogStage = (Stage) mapSlider.getScene().getWindow();
     /**
      * Initializes the controller class. Also handles all slider changes.
      */
@@ -91,11 +95,14 @@ public class SettingScreenController {
     }
 
     /**
-     * Called when the user clicks ok.
+     * Called when the user clicks ok. Brings up player setting screen.
      */
     @FXML
-    private void handleOk() {
-        okClicked = true;
-        dialogStage.close();
+    private void handleOk() throws IOException {
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
+        Scene scene = new Scene(root);
+        dialogStage.setScene(scene);
+        dialogStage.show();
     }
 }
