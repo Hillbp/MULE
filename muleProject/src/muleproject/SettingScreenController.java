@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -100,7 +101,7 @@ public class SettingScreenController {
     @FXML
     private void handleOk() throws IOException {
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("playerSettingScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
