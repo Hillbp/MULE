@@ -75,7 +75,7 @@ public class Settings {
      * Returns the current game's difficulty
      * @return The difficulty of the game
      */
-    public Difficulty getDifficulty() {
+    public static Difficulty getDifficulty() {
         return diff;
     }
 
@@ -83,7 +83,7 @@ public class Settings {
      * Returns the current game's map type
      * @return The type of mape for the game
      */
-    public Maptype getMaptype() {
+    public static Maptype getMaptype() {
         return map;
     }
 
@@ -91,7 +91,7 @@ public class Settings {
      * Returns the current game's number of human players
      * @return The number of human players of the game
      */
-    public int getPlayers() {
+    public static int getPlayers() {
         return numPlayers;
     }
 }
