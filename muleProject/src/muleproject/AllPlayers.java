@@ -5,11 +5,6 @@ public class AllPlayers{
 	private Player[] playerList = new Player[4];
 	private int numPlayers = 0;
 
-	public AllPlayers(int numHumans) {
-		//TODO
-		//Do we actually need a constructor here?
-	}
-
     /**
      * this method will tell which player is currently
      * selecting his options; do this by counting the
