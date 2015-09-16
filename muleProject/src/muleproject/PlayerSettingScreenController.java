@@ -36,7 +36,7 @@ public class PlayerSettingScreenController {
     @FXML
     private Label playerNum;
     
-    private int numPlayers = Settings.getPlayers();
+    final private int NUM_PLAYERS = Settings.getPlayers();
     private Stage dialogStage = (Stage) personName.getScene().getWindow();
     private StringProperty tempRace;
     
@@ -86,7 +86,7 @@ public class PlayerSettingScreenController {
             // This checks to see if the number of human players in AllPlayers
             // matches the number of human players set by the game. This method
             // must be implemented in AllPlayers.
-            if (AllPlayers.playerCount() == numPlayers) {
+            if (AllPlayers.playerCount() == NUM_PLAYERS) {
                 
                 // Calls the main game screen (work in progress for now.)
                 Parent root;
