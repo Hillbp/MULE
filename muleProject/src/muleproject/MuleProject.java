@@ -15,30 +15,22 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Zach
+ * @author Zach and JT
  */
 public class MuleProject extends Application {
     
+    Button startButton;
+    
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("M.U.L.E."); //Title of Stage
         StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
+        startButton = new Button("Start"); //Creates button to go from title to settings
+        root.getChildren().add(startButton);
         Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
+        startButton.setOnAction(e -> primaryStage.setScene(settingScreen));
     }
 
     /**
