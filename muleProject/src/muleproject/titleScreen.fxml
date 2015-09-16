@@ -7,18 +7,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="muleproject.MuleProject">
    <children>
       <Label layoutX="128.0" layoutY="14.0" text="M.U.L.E.">
          <font>
             <Font name="DejaVu Sans Mono Bold" size="72.0" />
          </font>
       </Label>
-      <Label layoutX="19.0" layoutY="200.0" text="Please Press Enter to Play">
+      <Label layoutX="20.0" layoutY="178.0" text="Please Press Start to Play">
          <font>
             <Font name="DejaVu Sans Mono Bold" size="36.0" />
          </font>
       </Label>
+      <Button layoutX="246.0" layoutY="270.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="109.0" text="START">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="21.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
