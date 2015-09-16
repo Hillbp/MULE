@@ -14,6 +14,8 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
@@ -31,21 +33,23 @@ public class PlayerSettingScreenController {
     private MenuButton racePicker;
     
     @FXML
-    private TextField personName;
+    private TextField playerName;
     
     @FXML
     private Label playerNum;
     
     final private int NUM_PLAYERS = Settings.getPlayers();
-    private Stage dialogStage = (Stage) personName.getScene().getWindow();
+    private Stage dialogStage = (Stage) playerName.getScene().getWindow();
     private StringProperty tempRace;
     
     /**
-     * Initializes the playerSettingScreen.
+     * Initializes the playerSettingScreen. Finds playerNum based upon first
+     * empty spot in AllPlayers array (i.e. if the array is empty at 0, the
+     * playerNum needs to equal 1. Method must return number as string.)
      */
     @FXML
     public void initialize() {
-
+        playerNum.setText(AllPlayers.currentPlayerSettingsNum());
     }
             
     /**
@@ -77,7 +81,7 @@ public class PlayerSettingScreenController {
     private void handleNext() throws IOException {
         if (isInputValid()) {
             HumanPlayer newPlayer = new HumanPlayer(new SimpleStringProperty(
-                    personName.getText()), tempRace, colorPicker.getValue());
+                    playerName.getText()), tempRace, colorPicker.getValue());
             // This is where the player is added to the player array in AllPlayers.
             // This must also increment a value in AllPlayers that keeps track
             // of the number of human players.
@@ -88,7 +92,9 @@ public class PlayerSettingScreenController {
             // must be implemented in AllPlayers.
             if (AllPlayers.playerCount() == NUM_PLAYERS) {
                 
-                // Calls the main game screen (work in progress for now.)
+                // Calls the main game screen (work in progress for now.) Also
+                // adds CPUs to the array in AllPlayers.
+                AllPlayers.addCPUs();
                 Parent root;
                 root = FXMLLoader.load(getClass().getResource(
                         "workInProgressScreen.fxml"));
@@ -173,10 +179,43 @@ public class PlayerSettingScreenController {
     }
     
     /**
-     * Called to check if input on player select screen is valid.
+     * Called to check if input on player select screen is valid. Requires
+     * contains method in the AllPlayers class to check and see if the current
+     * playerName or playerColor can be entered.
      */
     @FXML
     private boolean isInputValid() {
+        String errorMessage = "";
         
+        if (playerName.getText() == null || playerName.getText().length() == 0) {
+            errorMessage += "Please enter an actual name into the field\n";
+        }
+        
+        if (AllPlayers.containsName(playerName.getText())) {
+            errorMessage += "Please choose a different name than your opponent\n";
+        }
+        
+        if (tempRace.equals(null)) {
+            errorMessage += "Please choose a race to play as\n";
+        }
+        
+        if (AllPlayers.containsColor(colorPicker.getValue())) {
+            errorMessage += "Please choose a different color than your opponent\n";
+        }
+        
+        if (errorMessage.length() == 0) {
+            return true;
+        } else {
+            // Show the error message.
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(errorMessage);
+            
+            alert.showAndWait();
+            
+            return false;
+        }
     }
 }
