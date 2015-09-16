@@ -1,3 +1,5 @@
+package muleproject;
+
 public class AIPlayer extends Player {
 	
 	public AIPlayer(String name, String race, String color) {

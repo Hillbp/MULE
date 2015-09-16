@@ -1,3 +1,5 @@
+package muleproject;
+
 public class HumanPlayer extends Player {
 	
 	public HumanPlayer(String name, String race, String color) {
