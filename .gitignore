@@ -45,3 +45,8 @@ Temporary Items
 /muleProject/nbproject/private/
 /muleProject/build/
 /muleProject/dist/
+
+# ignore intellij project files
+.idea
+MULE.iml
+muleProject/src/muleProject.iml
