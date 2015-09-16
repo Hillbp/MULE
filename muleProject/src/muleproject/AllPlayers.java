@@ -1,5 +1,7 @@
 import javafx.beans.property.StringProperty;
 
+package muleproject;
+
 public class AllPlayers{
 
 	private Player[] playerList = new Player[4];

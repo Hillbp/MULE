@@ -1,6 +1,8 @@
 import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+package muleproject;
+
 public abstract class Player {
 
     protected StringProperty type;
