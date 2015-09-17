@@ -1,3 +1,5 @@
+package muleproject;
+
 import javafx.beans.property.StringProperty;
 
 public class AllPlayers{
