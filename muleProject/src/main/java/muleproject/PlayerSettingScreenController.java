@@ -24,7 +24,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 public class PlayerSettingScreenController {
-    
+    private AllPlayers playerList;
+
     @FXML
     private ColorPicker colorPicker;
     
@@ -49,6 +50,7 @@ public class PlayerSettingScreenController {
     @FXML
     public void initialize() {
         playerNum.setText(AllPlayers.currentPlayerSettingsNum());
+        playerList = MuleProject.players;
     }
             
     /**

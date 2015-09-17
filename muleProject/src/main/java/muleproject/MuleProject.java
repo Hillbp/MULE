@@ -19,7 +19,8 @@ import javafx.stage.Stage;
  */
 public class MuleProject extends Application {
     
-    Button startButton;
+    protected static Button startButton;
+    public static AllPlayers players;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -37,6 +38,7 @@ public class MuleProject extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        players = new AllPlayers();
         launch(args);
     }
     
