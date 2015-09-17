@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package muleproject;
+//package muleproject;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -19,8 +19,8 @@ import javafx.stage.Stage;
  */
 public class MuleProject extends Application {
     
-    Button startButton;
-    AllPlayers players;
+    private Button startButton;
+    public static AllPlayers players;
     
     @Override
     public void start(Stage primaryStage) throws Exception {

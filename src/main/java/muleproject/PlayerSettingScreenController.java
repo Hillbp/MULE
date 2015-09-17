@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package muleproject;
+//package muleproject;
 
 /**
  * Controller for the playerSettingScreen.
@@ -40,7 +40,7 @@ public class PlayerSettingScreenController {
     final private int NUM_PLAYERS = Settings.getPlayers();
     private Stage dialogStage = (Stage) playerName.getScene().getWindow();
     private StringProperty tempRace;
-    private String playerNumber = AllPlayers.currentPlayerSettingsNum();
+    private String playerNumber = Integer.toString( MuleProject.players.currentPlayerSettingsNum());
     
     /**
      * Initializes the playerSettingScreen. Finds playerNum based upon first
@@ -85,16 +85,16 @@ public class PlayerSettingScreenController {
             // This is where the player is added to the player array in AllPlayers.
             // This must also increment a value in AllPlayers that keeps track
             // of the number of human players.
-            AllPlayers.addPlayer(newPlayer);
+            MuleProject.players.addPlayer(newPlayer);
             
             // This checks to see if the number of human players in AllPlayers
             // matches the number of human players set by the game. This method
             // must be implemented in AllPlayers.
-            if (AllPlayers.playerCount() == NUM_PLAYERS) {
+            if (MuleProject.players.playerCount() == NUM_PLAYERS) {
                 
                 // Calls the main game screen (work in progress for now.) Also
                 // adds CPUs to the array in AllPlayers.
-                AllPlayers.addCPUs();
+                MuleProject.players.addCPUs();
                 Parent root;
                 root = FXMLLoader.load(getClass().getResource(
                         "workInProgressScreen.fxml"));
@@ -191,7 +191,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please enter an actual name into the field\n";
         }
         
-        if (AllPlayers.containsName(new SimpleStringProperty(playerName.getText()))) {
+        if (MuleProject.players.containsName(new SimpleStringProperty(playerName.getText()))) {
             errorMessage += "Please choose a different name than your opponent\n";
         }
         
@@ -199,7 +199,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a race to play as\n";
         }
         
-        if (AllPlayers.containsColor(new SimpleStringProperty(colorPicker.getValue().toString()))) {
+        if (MuleProject.players.containsColor(new SimpleStringProperty(colorPicker.getValue().toString()))) {
             errorMessage += "Please choose a different color than your opponent\n";
         }
         

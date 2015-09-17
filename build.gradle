@@ -6,7 +6,7 @@ version = '1.0'
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'M2 Lab','Implementation-Version': version, 'Main-Class': 'muleproject.MuleProject', 'Class-Path': '../../lib/resources.jar'
+        attributes 'Implementation-Title': 'M2 Lab','Implementation-Version': version, 'Main-Class': 'MuleProject', 'Class-Path': '../../lib/resources.jar'
     }
 }
 
