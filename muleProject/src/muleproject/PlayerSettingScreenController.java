@@ -40,6 +40,7 @@ public class PlayerSettingScreenController {
     final private int NUM_PLAYERS = Settings.getPlayers();
     private Stage dialogStage = (Stage) playerName.getScene().getWindow();
     private StringProperty tempRace;
+    private String playerNumber = AllPlayers.currentPlayerSettingsNum();
     
     /**
      * Initializes the playerSettingScreen. Finds playerNum based upon first
@@ -48,7 +49,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     public void initialize() {
-        playerNum.setText(AllPlayers.currentPlayerSettingsNum());
+        playerNum.setText(playerNumber);
     }
             
     /**
@@ -79,8 +80,8 @@ public class PlayerSettingScreenController {
     @FXML
     private void handleNext() throws IOException {
         if (isInputValid()) {
-            HumanPlayer newPlayer = new HumanPlayer(new SimpleStringProperty(
-                    playerName.getText()), tempRace, colorPicker.getValue());
+            HumanPlayer newPlayer = new HumanPlayer(
+                    playerName.getText(), tempRace.toString(), colorPicker.getValue().toString());
             // This is where the player is added to the player array in AllPlayers.
             // This must also increment a value in AllPlayers that keeps track
             // of the number of human players.
@@ -190,7 +191,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please enter an actual name into the field\n";
         }
         
-        if (AllPlayers.containsName(playerName.getText())) {
+        if (AllPlayers.containsName(new SimpleStringProperty(playerName.getText()))) {
             errorMessage += "Please choose a different name than your opponent\n";
         }
         
@@ -198,7 +199,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a race to play as\n";
         }
         
-        if (AllPlayers.containsColor(colorPicker.getValue())) {
+        if (AllPlayers.containsColor(new SimpleStringProperty(colorPicker.getValue().toString()))) {
             errorMessage += "Please choose a different color than your opponent\n";
         }
         
