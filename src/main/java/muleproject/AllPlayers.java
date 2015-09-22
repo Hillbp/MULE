@@ -1,4 +1,3 @@
-package muleproject;
 
 import javafx.beans.property.StringProperty;
 

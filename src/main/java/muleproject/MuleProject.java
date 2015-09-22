@@ -11,7 +11,10 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 
 /**
  *
@@ -28,10 +31,15 @@ public class MuleProject extends Application {
         StackPane root = new StackPane();
         startButton = new Button("Start"); //Creates button to go from title to settings
         root.getChildren().add(startButton);
+        Parent newParent;
+        newParent = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
+        Scene nextScene = new Scene(root);
+        startButton.setOnAction(e -> primaryStage.setScene(nextScene));
         Scene scene = new Scene(root, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
-        startButton.setOnAction(e -> primaryStage.setScene(settingScreen));
+
+
     }
 
     /**
