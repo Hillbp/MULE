@@ -33,7 +33,7 @@ public class MuleProject extends Application {
         root.getChildren().add(startButton);
         Parent newParent;
         newParent = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
-        Scene nextScene = new Scene(root);
+        Scene nextScene = new Scene(newParent);
         startButton.setOnAction(e -> primaryStage.setScene(nextScene));
         Scene scene = new Scene(root, 300, 250);
         primaryStage.setScene(scene);

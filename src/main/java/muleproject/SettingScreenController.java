@@ -35,8 +35,6 @@ public class SettingScreenController {
     
     @FXML
     private Slider numPlayerSlider;
-    
-    private Stage dialogStage = (Stage) mapSlider.getScene().getWindow();
     /**
      * Initializes the controller class. Also handles all slider changes.
      */
@@ -45,7 +43,7 @@ public class SettingScreenController {
         Settings.setDifficulty(Settings.Difficulty.EASY);
         Settings.setMapType(Settings.Maptype.STANDARD);
         Settings.setNumPlayers(1);
-        
+
         //Listens for Difficulty Slider value changes.
         difficultySlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -86,22 +84,15 @@ public class SettingScreenController {
            }
         });
     }
-    
-    /**
-     * Sets the stage of this dialog.
-     * 
-     * @param dialogStage
-     */
-    public void setdialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
 
     /**
      * Called when the user clicks ok. Brings up player setting screen.
      */
     @FXML
     private void handleOk() throws IOException {
+        Stage dialogStage;
         Parent root;
+        dialogStage = (Stage) mapSlider.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("playerSettingScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);

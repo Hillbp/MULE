@@ -38,7 +38,6 @@ public class PlayerSettingScreenController {
     private Label playerNum;
     
     final private int NUM_PLAYERS = Settings.getPlayers();
-    private Stage dialogStage = (Stage) playerName.getScene().getWindow();
     private StringProperty tempRace;
     private String playerNumber = Integer.toString( MuleProject.players.currentPlayerSettingsNum());
     
@@ -51,21 +50,14 @@ public class PlayerSettingScreenController {
     public void initialize() {
         playerNum.setText(playerNumber);
     }
-            
-    /**
-     * Sets the stage of this dialog.
-     * 
-     * @param dialogStage
-     */
-    public void setdialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
 
     /**
      * Called when the user clicks back. Brings up game setting screen.
      */
     @FXML
     private void handleBack() throws IOException {
+        Stage dialogStage; 
+        dialogStage = (Stage) playerNum.getScene().getWindow();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
         Scene scene = new Scene(root);
@@ -80,6 +72,8 @@ public class PlayerSettingScreenController {
     @FXML
     private void handleNext() throws IOException {
         if (isInputValid()) {
+            Stage dialogStage; 
+            dialogStage = (Stage) playerNum.getScene().getWindow();
             HumanPlayer newPlayer = new HumanPlayer(
                     playerName.getText(), tempRace.toString(), colorPicker.getValue().toString());
             // This is where the player is added to the player array in AllPlayers.
@@ -185,6 +179,8 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private boolean isInputValid() {
+        Stage dialogStage;
+        dialogStage = (Stage) playerNum.getScene().getWindow();
         String errorMessage = "";
         
         if (playerName.getText() == null || playerName.getText().length() == 0) {
@@ -195,7 +191,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a different name than your opponent\n";
         }
         
-        if (tempRace.equals(null)) {
+        if (tempRace == null) {
             errorMessage += "Please choose a race to play as\n";
         }
         

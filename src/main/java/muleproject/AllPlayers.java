@@ -63,8 +63,10 @@ public class AllPlayers{
      */
     public boolean containsName(StringProperty playerName) {
         for (int i = 0; i < numPlayers; i++) {
-            if (playerList[i].getName().equals(playerName)) {
-                return true;
+            if (playerList[i].getName() != null) {
+                if (playerList[i].getName().equals(playerName)) {
+                    return true;
+                }
             }
         }
         return false;
