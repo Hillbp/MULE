@@ -58,6 +58,7 @@ public class PlayerSettingScreenController {
     private void handleBack() throws IOException {
         Stage dialogStage; 
         dialogStage = (Stage) playerNum.getScene().getWindow();
+        MuleProject.clearPlayers();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("settingScreen.fxml"));
         Scene scene = new Scene(root);
@@ -187,7 +188,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please enter an actual name into the field\n";
         }
         
-        if (MuleProject.players.containsName(new SimpleStringProperty(playerName.getText()))) {
+        if (MuleProject.players.containsName(playerName.getText())) {
             errorMessage += "Please choose a different name than your opponent\n";
         }
         
@@ -195,7 +196,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a race to play as\n";
         }
         
-        if (MuleProject.players.containsColor(new SimpleStringProperty(colorPicker.getValue().toString()))) {
+        if (MuleProject.players.containsColor(colorPicker.getValue().toString())) {
             errorMessage += "Please choose a different color than your opponent\n";
         }
         

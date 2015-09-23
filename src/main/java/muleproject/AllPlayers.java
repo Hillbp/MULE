@@ -14,12 +14,7 @@ public class AllPlayers{
      * @return int the player number who is choosing his settings
      */
     public int currentPlayerSettingsNum() {
-        for (int i = 0; i < 4; i++) {
-            if (playerList[i] == null) {
-                return i + 1;
-            }
-        }
-        return -1;
+        return numPlayers + 1;
     }
 
     /**
@@ -61,10 +56,10 @@ public class AllPlayers{
      * @param playerName name of player
      * @return boolean whether contains name or not
      */
-    public boolean containsName(StringProperty playerName) {
-        for (int i = 0; i < numPlayers; i++) {
-            if (playerList[i].getName() != null) {
-                if (playerList[i].getName().equals(playerName)) {
+    public boolean containsName(String playerName) {
+        for (int i = 0; i <= numPlayers; i++) {
+            if (playerList[i] != null) {
+                if (playerList[i].getName().equalsIgnoreCase(playerName)) {
                     return true;
                 }
             }
@@ -80,10 +75,12 @@ public class AllPlayers{
      *
      * @return boolean whether contains color or not
      */
-    public boolean containsColor(StringProperty playerColor) {
-        for (int i = 0; i < numPlayers; i++) {
-            if (playerList[i].getColor().equals(playerColor)) {
-                return true;
+    public boolean containsColor(String playerColor) {
+        for (int i = 0; i <= numPlayers; i++) {
+            if (playerList[i] != null) {
+                if (playerList[i].getColor().equalsIgnoreCase(playerColor)) {
+                    return true;
+                }
             }
         }
         return false;

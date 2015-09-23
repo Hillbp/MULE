@@ -42,6 +42,11 @@ public class MuleProject extends Application {
 
     }
 
+
+    public static void clearPlayers() {
+        players = new AllPlayers();
+    }
+    
     /**
      * @param args the command line arguments
      */
