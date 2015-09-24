@@ -92,7 +92,7 @@ public class PlayerSettingScreenController {
                 MuleProject.players.addCPUs();
                 Parent root;
                 root = FXMLLoader.load(getClass().getResource(
-                        "workInProgressScreen.fxml"));
+                        "GridScreen.fxml"));
                 Scene scene = new Scene(root);
                 dialogStage.setScene(scene);
                 dialogStage.show();
