@@ -24,6 +24,7 @@ public class MuleProject extends Application {
     
     private Button startButton;
     public static AllPlayers players;
+    public static Player currentPlayer;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -39,7 +40,13 @@ public class MuleProject extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
+        for (int turnCount = 1; turnCount <= 12; turnCount++) {
+            if (turnCount < 3) {
+                initLandGrants();
+            } else {
+                initLandPurchase();
+            }
+        }
     }
 
 
@@ -55,4 +62,17 @@ public class MuleProject extends Application {
         launch(args);
     }
     
+    /**
+     * This method initiates the land grant phase of a turn. Each player gets to
+     * choose a tile for free if. Only takes place in the first 2 turns.
+     */
+    public void initLandGrants() {
+        boolean landCheck;
+        //Goes through every player's turn
+        for (int i = 0; i < 4; i++) {
+            //This method gets the player at an index in the array. 
+            currentPlayer = players.getPlayer(i);
+
+        }
+    }
 }
