@@ -3,6 +3,7 @@ public class Property {
     private int propValue;
     private String propType;
     private boolean isBought = false;
+    private Player owner;
 
     public Property(int num, int value, String type) {
         propNum = num;
@@ -44,5 +45,13 @@ public class Property {
         } else {
             isBought = false; 
         }
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player newOwner) {
+        owner = newOwner;
     }
 }

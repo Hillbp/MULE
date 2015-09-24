@@ -72,7 +72,20 @@ public class MuleProject extends Application {
         for (int i = 0; i < 4; i++) {
             //This method gets the player at an index in the array. 
             currentPlayer = players.getPlayer(i);
-
+            if (currentPlayer.getType().equals("Human")) {
+                //TODO
+            } else {
+                int landNumValue = (int) ((Math.random() * 45) + 1);
+                // Need static method that allows a property to be selected from the board.
+                Property landChoice = MapScreenController.getTile(landNumValue);
+                // Need 
+                if (!landChoice.isBought()) {
+                    landChoice.setOwner(currentPlayer);
+                    landChoice.toggleBought();
+                    // Need setMoney and getMoney in player
+                    currentPlayer.setMoney(currentPlayer.getMoney() - landChoice.getValue());
+                }
+            }
         }
     }
 }
