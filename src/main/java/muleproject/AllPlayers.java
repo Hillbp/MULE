@@ -1,5 +1,4 @@
-
-import javafx.beans.property.StringProperty;
+import java.awt.Color;
 
 public class AllPlayers{
 
@@ -22,7 +21,7 @@ public class AllPlayers{
      * @param player player to add
      */
     public void addPlayer(HumanPlayer player) {
-        playerList[currentPlayerSettingsNum()] = player;
+        playerList[this.currentPlayerSettingsNum()] = player;
         numPlayers++;
     }
 
@@ -75,10 +74,10 @@ public class AllPlayers{
      *
      * @return boolean whether contains color or not
      */
-    public boolean containsColor(String playerColor) {
+    public boolean containsColor(Color playerColor) {
         for (int i = 0; i <= numPlayers; i++) {
             if (playerList[i] != null) {
-                if (playerList[i].getColor().equalsIgnoreCase(playerColor)) {
+                if (playerList[i].getColor().equals(playerColor)) {
                     return true;
                 }
             }

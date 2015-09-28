@@ -10,8 +10,6 @@
  * @author Zach
  */
 import java.io.IOException;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -38,7 +36,7 @@ public class PlayerSettingScreenController {
     private Label playerNum;
     
     final private int NUM_PLAYERS = Settings.getPlayers();
-    private StringProperty tempRace;
+    private String tempRace;
     private String playerNumber = Integer.toString( MuleProject.players.currentPlayerSettingsNum());
     
     /**
@@ -114,7 +112,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handlePacker() {
-        tempRace = new SimpleStringProperty("Packer");
+        tempRace = "Packer");
     }
     
     /**
@@ -122,7 +120,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleSpheroid() {
-        tempRace = new SimpleStringProperty("Spheroid");
+        tempRace = new "Spheroid";
     }
     
     /**
@@ -130,7 +128,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleHumanoid() {
-        tempRace = new SimpleStringProperty("Humanoid");
+        tempRace = "Humanoid";
     }
     
     /**
@@ -138,7 +136,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleLeggite() {
-        tempRace = new SimpleStringProperty("Leggite");
+        tempRace = "Leggite";
     }
     
     /**
@@ -146,7 +144,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleFlapper() {
-        tempRace = new SimpleStringProperty("Flapper");
+        tempRace = "Flapper";
     }
     
     /**
@@ -154,7 +152,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleBonzoid() {
-        tempRace = new SimpleStringProperty("Bonzoid");
+        tempRace = "Bonzoid";
     }
     
     /**
@@ -162,7 +160,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleMechtron() {
-        tempRace = new SimpleStringProperty("Mechtron");
+        tempRace = "Mechtron";
     }
     
     /**
@@ -170,7 +168,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleGollumer() {
-        tempRace = new SimpleStringProperty("Gollumer");
+        tempRace = "Gollumer";
     }
     
     /**

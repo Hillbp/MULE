@@ -10,7 +10,7 @@ public class AIPlayer extends Player {
 	}
 
 	public AIPlayer() {
-		this("AI " + String.valueOf(playerIndex) , "Computron", Color.BLUE);
+		this("AI " + String.valueOf(playerIndex) , "Mechtron", Color.BLUE);
 	}
 
 	/*Methods that only relate to AI players go here*/
