@@ -64,7 +64,7 @@ public class MuleProject extends Application {
     
     /**
      * This method initiates the land grant phase of a turn. Each player gets to
-     * choose a tile for free if. Only takes place in the first 2 turns.
+     * choose a tile for free. Only takes place in the first 2 turns.
      */
     public void initLandGrants() {
         boolean landCheck;
@@ -73,16 +73,37 @@ public class MuleProject extends Application {
             //This method gets the player at an index in the array. 
             currentPlayer = players.getPlayer(i);
             if (currentPlayer.getType().equals("Human")) {
-                //TODO
+                //TODO: Listen for button press
+            } else {
+                int landNumValue = (int) ((Math.random() * 45) + 1);
+                // Need static method that allows a property to be selected from the board.
+                Property landChoice = MapScreenController.getTile(landNumValue); 
+                if (!landChoice.isBought()) {
+                    landChoice.setOwner(currentPlayer);
+                    landChoice.toggleBought();
+                }
+            }
+        }
+    }
+
+    /**
+     * This method initiates the land grant phase of a turn after turn 2. Each player gets to
+     * choose a tile and buy it for money.
+     */
+    public void initLandPurchase() {
+        boolean landCheck;
+        for (int i = 0; i < 4; i++) {
+            //This method gets the player at an index in the array. 
+            currentPlayer = players.getPlayer(i);
+            if (currentPlayer.getType().equals("Human")) {
+                //TODO: Listen for button press
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
                 Property landChoice = MapScreenController.getTile(landNumValue);
-                // Need 
-                if (!landChoice.isBought()) {
+                if (!landChoice.isBought() && !(currentPlayer.getMoney() - landChoice.getValue() < 0)) {
                     landChoice.setOwner(currentPlayer);
                     landChoice.toggleBought();
-                    // Need setMoney and getMoney in player
                     currentPlayer.setMoney(currentPlayer.getMoney() - landChoice.getValue());
                 }
             }
