@@ -1,13 +1,17 @@
+import java.awt.Color;
+
 public class AIPlayer extends Player {
+
+	private static int playerIndex = 0;
 	
-	public AIPlayer(String name, String race, String color) {
+	public AIPlayer(String name, String race, Color color) {
+        playerIndex++;
 		super(name, race, color);
 	}
 
 	public AIPlayer() {
-		//TODO change race to actual race
-		this("AI", "Computron", "Blue");
+		this("AI " + String.valueOf(playerIndex) , "Computron", Color.BLUE);
 	}
 
-	/*Methods that only relate to ai players go here*/
+	/*Methods that only relate to AI players go here*/
 }
