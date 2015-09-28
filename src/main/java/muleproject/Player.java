@@ -6,7 +6,7 @@ public abstract class Player {
     private Color color;
 
 
-    public Player(String name, String race, String color, String type) {
+    public Player(String name, String race, Color color) {
 	this.name = name;
 	this.race = race;
 	this.color = color;
