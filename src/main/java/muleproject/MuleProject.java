@@ -63,14 +63,14 @@ public class MuleProject extends Application {
         boolean landCheck;
         //Goes through every player's turn
         for (int i = 0; i < 4; i++) {
-            //This method gets the player at an index in the array. 
-            currentPlayer = players.getPlayer(i);
+            //This method gets the player at an index in the array.
+            currentPlayer = players.getPlayer(i); //TODO does not exist
             if (currentPlayer.getType().equals("Human")) {
                 //TODO: Listen for button press
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
-                Property landChoice = MapScreenController.getTile(landNumValue); 
+                Property landChoice = MapScreenController.getTile(landNumValue);
                 if (!landChoice.isBought()) {
                     landChoice.setOwner(currentPlayer);
                     landChoice.toggleBought();
@@ -86,7 +86,7 @@ public class MuleProject extends Application {
     public void initLandPurchase() {
         boolean landCheck;
         for (int i = 0; i < 4; i++) {
-            //This method gets the player at an index in the array. 
+            //This method gets the player at an index in the array.
             currentPlayer = players.getPlayer(i);
             if (currentPlayer.getType().equals("Human")) {
                 //TODO: Listen for button press
