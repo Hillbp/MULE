@@ -24,14 +24,13 @@ public class GridScreenController {
 
     @FXML
     private void initialize() {
-
     }
 
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();
         b.setStyle("-fx-background-color: darkblue");
-        //b.setStyle("-fx-background-color: " + currentPlayer.getColor() + "");
+        //b.setStyle("-fx-background-color: " + MuleProject.currentPlayer.getColor() + "");
     }
 
     @FXML
