@@ -43,11 +43,7 @@ public class Property {
     }
 
     public void toggleBought() {
-        if (!isBought) {
-            isBought = true;
-        } else {
-            isBought = false; 
-        }
+        isBought = !isBought;
     }
 
     public Player getOwner() {
