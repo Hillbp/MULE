@@ -26,11 +26,25 @@ public class GridScreenController {
     }
 
     @FXML
-    private void handleBack() throws IOException {
+    private void handleButtonAction(ActionEvent ae) {
+        Button b = (Button) ev.getSource();
+        b.setStyle("-fx-background-color: darkblue");
+        //b.setStyle("-fx-background-color: " + currentPlayer.getColor() + "");
+    }
+
+    @FXML
+    private void handleNext() throws IOException {
         Parent root;
         root = FXMLLoader.load(getClass().getResource("workInProgressScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
+    }
+
+    @FXML
+    private void setOwner(Player currentPlayer) {
+        Button b = (Button) ev.getSource();
+        b.setStyle("-fx-background-color: darkblue");
+        //b.setStyle("-fx-background-color: " + currentPlayer.getColor() + "");
     }
 }
