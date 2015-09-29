@@ -24,6 +24,7 @@ public class GridScreenController {
 
     @FXML
     private void initialize() {
+        //TODO nothing needs to happen here?
     }
 
     @FXML
@@ -31,18 +32,17 @@ public class GridScreenController {
         Button b = (Button) ev.getSource();
         b.setStyle("-fx-background-color: darkblue");
         //b.setStyle("-fx-background-color: " + MuleProject.currentPlayer.getColor() + "");
+        System.out.println(b.getLayoutX());
+        System.out.println(b.getText());
     }
 
     @FXML
     private void endTurnButtonPress() throws IOException {
+        //TODO end currentplayer's turn
     }
 
     @FXML
     private void townButtonPress() throws IOException {
-    }
-
-    @FXML
-    private void handleNext() throws IOException {
         Parent root;
         root = FXMLLoader.load(getClass().getResource("workInProgressScreen.fxml"));
         Scene scene = new Scene(root);
