@@ -1,4 +1,4 @@
-import java.awt.Color;
+import javafx.scene.paint.Color;
 
 public class HumanPlayer extends Player {
 	

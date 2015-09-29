@@ -1,3 +1,4 @@
+import javafx.scene.paint.Color;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -65,12 +66,12 @@ public class MuleProject extends Application {
         for (int i = 0; i < 4; i++) {
             //This method gets the player at an index in the array.
             currentPlayer = players.getPlayer(i); //TODO does not exist
-            if (currentPlayer.getType().equals("Human")) {
+            if (currentPlayer instanceof HumanPlayer) {
                 //TODO: Listen for button press
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
-                Property landChoice = MapScreenController.getTile(landNumValue);
+                Property landChoice = GridScreenController.getTile(landNumValue);
                 if (!landChoice.isBought()) {
                     landChoice.setOwner(currentPlayer);
                     landChoice.toggleBought();
@@ -88,14 +89,15 @@ public class MuleProject extends Application {
         for (int i = 0; i < 4; i++) {
             //This method gets the player at an index in the array.
             currentPlayer = players.getPlayer(i);
-            if (currentPlayer.getType().equals("Human")) {
+            if (currentPlayer instanceof HumanPlayer) {
                 //TODO: Listen for button press
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
-                Property landChoice = MapScreenController.getTile(landNumValue);
+                Property landChoice = GridScreenController.getTile(landNumValue);
                 if (!landChoice.isBought() && !(currentPlayer.getMoney() - landChoice.getValue() < 0)) {
                     landChoice.setOwner(currentPlayer);
+                    currentPlayer.addProperty(landChoice);
                     landChoice.toggleBought();
                     currentPlayer.setMoney(currentPlayer.getMoney() - landChoice.getValue());
                 }

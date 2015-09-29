@@ -1,8 +1,11 @@
+import javafx.scene.paint.Color;
+
 public class Property {
     private int propNum;
     private int propValue;
     private String propType;
     private boolean isBought = false;
+    private boolean hasMule;
     private Player owner;
 
     public Property(int num, int value, String type) {

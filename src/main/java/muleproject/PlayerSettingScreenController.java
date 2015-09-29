@@ -9,6 +9,7 @@
  * Controller for the playerSettingScreen.
  * @author Zach
  */
+import javafx.scene.paint.Color;
 import java.io.IOException;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -74,7 +75,7 @@ public class PlayerSettingScreenController {
             Stage dialogStage; 
             dialogStage = (Stage) playerNum.getScene().getWindow();
             HumanPlayer newPlayer = new HumanPlayer(
-                    playerName.getText(), tempRace.toString(), colorPicker.getValue().toString());
+                    playerName.getText(), tempRace.toString(), colorPicker.getValue());
             // This is where the player is added to the player array in AllPlayers.
             // This must also increment a value in AllPlayers that keeps track
             // of the number of human players.
@@ -112,7 +113,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handlePacker() {
-        tempRace = "Packer");
+        tempRace = "Packer";
     }
     
     /**
@@ -120,7 +121,7 @@ public class PlayerSettingScreenController {
      */
     @FXML
     private void handleSpheroid() {
-        tempRace = new "Spheroid";
+        tempRace = "Spheroid";
     }
     
     /**
@@ -194,7 +195,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a race to play as\n";
         }
         
-        if (MuleProject.players.containsColor(colorPicker.getValue().toString())) {
+        if (MuleProject.players.containsColor(colorPicker.getValue())) {
             errorMessage += "Please choose a different color than your opponent\n";
         }
         

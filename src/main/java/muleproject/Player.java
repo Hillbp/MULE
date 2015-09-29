@@ -1,4 +1,4 @@
-import java.awt.Color;
+import javafx.scene.paint.Color;
 
 public abstract class Player {
     private String name;
@@ -9,11 +9,15 @@ public abstract class Player {
     private int energy;
     private int smithore;
 
+    private Property[] properties = new Property[32];
+    private int propertyLength = 0;
+
 
     public Player(String name, String race, Color color) {
 	this.name = name;
 	this.race = race;
 	this.color = color;
+    initPlayer();
     }
 
 	/*Here there will be other methods that apply to both Player types,
@@ -32,8 +36,25 @@ public abstract class Player {
         smithore = 0;
     }
 
-    public void calculateProduction() {
+    public void addProperty(Property p) {
+        properties[propertyLength] = p;
+        propertyLength++;
+    }
 
+    //TODO Implement this method
+    public Property removeProperty(Property p) {
+        return null;
+    }
+
+    public void calculateProduction() {
+        int i = 0;
+        int moneyProd = 0;
+        int foodProd = 0;
+        int eProd = 0;
+        int smithProd = 0;
+        while (i < propertyLength) {
+            Property prop = properties[i];
+        }
     }
 
     public String getName() {
@@ -56,8 +77,12 @@ public abstract class Player {
         return food;
     }
 
-    public int getPower() {
-        return power;
+    public int getEnergy() {
+        return energy;
+    }
+
+    public int getSmithore() {
+        return smithore;
     }
 
     public void setName(String name) {
@@ -70,5 +95,25 @@ public abstract class Player {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void addMoney(int money) {
+        this.money = this.money + money;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    public void setSmithore(int smithore) {
+        this.smithore = smithore;
     }
 }

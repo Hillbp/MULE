@@ -1,12 +1,12 @@
-import java.awt.Color;
+import javafx.scene.paint.Color;
 
 public class AIPlayer extends Player {
 
 	private static int playerIndex = 0;
 	
 	public AIPlayer(String name, String race, Color color) {
-        playerIndex++;
 		super(name, race, color);
+        playerIndex++;
 	}
 
 	public AIPlayer() {

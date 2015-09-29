@@ -1,10 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//package muleproject;
-
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +14,11 @@ public class GridScreenController {
 
     private Label title;
     private Stage dialogStage = (Stage) title.getScene().getWindow();
+
+    //TODO Implement this method
+    public static Property getTile(int i) {
+        return null;
+    }
 
     @FXML
     private void initialize() {

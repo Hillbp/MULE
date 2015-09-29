@@ -1,4 +1,4 @@
-import java.awt.Color;
+import javafx.scene.paint.Color;
 
 public class AllPlayers{
 
@@ -83,6 +83,10 @@ public class AllPlayers{
             }
         }
         return false;
+    }
+
+    public Player getPlayer(int index) {
+        return playerList[index];
     }
 
 }

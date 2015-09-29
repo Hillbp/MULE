@@ -1,4 +1,4 @@
-//package muleproject;
+import javafx.scene.paint.Color;
 
 /**
  * @author Brandon Hill
@@ -22,7 +22,7 @@ public class Settings {
     public enum Maptype {
         STANDARD,
         WETLAND,
-        MOUNTAIN;
+        MOUNTAIN
     }
 
     /**
