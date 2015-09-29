@@ -71,7 +71,7 @@ public class MuleProject extends Application {
         //Goes through every player's turn
         for (int i = 0; i < 4; i++) {
             //This method gets the player at an index in the array.
-            currentPlayer = players.getPlayer(i); //TODO does not exist
+            currentPlayer = players[i]; //TODO fixed maybe?
             if (currentPlayer.getType().equals("Human")) {
                 //TODO: Listen for button press
             } else {
