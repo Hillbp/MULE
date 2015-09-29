@@ -5,6 +5,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
 
 /**
  * Controller for GridScreen.
@@ -26,7 +28,7 @@ public class GridScreenController {
     }
 
     @FXML
-         private void colorButtonPress() throws IOException {
+         private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();
         b.setStyle("-fx-background-color: darkblue");
         //b.setStyle("-fx-background-color: " + currentPlayer.getColor() + "");
