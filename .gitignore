@@ -48,6 +48,9 @@ Temporary Items
 
 # ignore intellij project files
 .idea
+*.iml
+*.class
+/out/
 MULE.iml
 muleProject/src/muleProject.iml
 /src/nbproject/private/
