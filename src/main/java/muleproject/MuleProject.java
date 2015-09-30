@@ -19,6 +19,7 @@ public class MuleProject extends Application {
     private Button startButton;
     public static AllPlayers players;
     public static Player currentPlayer;
+    public static Property[][] propertyGrid;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -34,6 +35,13 @@ public class MuleProject extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        propertyGrid = new Property[5][9];
+        for (int row = 0; int < propertyGrid.length; row++) {
+            for (int col = 0; int < propertyGrid[row].length; row++) {
+                propertyNum = (row * 9) + col + 1;
+                propertyGrid[row][col] = new Property(propertyNum, 300, "grass");
+            }
+        }
         for (int turnCount = 1; turnCount <= 12; turnCount++) {
             if (turnCount < 3) {
                 initLandGrants();
