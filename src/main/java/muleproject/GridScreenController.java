@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.Node;
 
 /**
  * Controller for GridScreen.
@@ -19,6 +21,9 @@ public class GridScreenController {
 
     private Label title;
     private Stage dialogStage = (Stage) title.getScene().getWindow();
+    private static Button currButton;
+    private static int buttonRow;
+    private static int buttonCol;
 
     //TODO Implement this method
     public static Property getTile(int i) {
@@ -33,10 +38,15 @@ public class GridScreenController {
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();
+        currButton = b;
         b.setStyle("-fx-background-color: darkblue");
         //b.setStyle("-fx-background-color: " + MuleProject.currentPlayer.getColor() + "");
         System.out.println(b.getLayoutX());
         System.out.println(b.getText());
+        //not sure if this will work
+        Node source = (Node)ev.getSource();
+        buttonCol = GridPane.getColumnIndex(source);
+        buttonRow = GridPane.getRowIndex(source);
     }
 
     @FXML

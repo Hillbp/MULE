@@ -54,6 +54,9 @@ public class MuleProject extends Application {
         }
     }
 
+    public static Property getProperty(int col, int row) {
+        return propertyGrid[row][col];
+    }
 
     public static void clearPlayers() {
         players = new AllPlayers();
@@ -83,9 +86,10 @@ public class MuleProject extends Application {
                 Exit e = new Exit();
                 t.schedule(e, 50000L);
             } else {
-                int landNumValue = (int) ((Math.random() * 45) + 1);
+                //int landNumValue = (int) ((Math.random() * 45) + 1);
+                Property landChoice = getProperty((int) Math.random()*5, (int) Math.random()*9);
                 // Need static method that allows a property to be selected from the board.
-                Property landChoice = GridScreenController.getTile(landNumValue);
+                //Property landChoice = Property.getNum(landNumValue);
                 if (!landChoice.isBought()) {
                     landChoice.setOwner(currentPlayer);
                     landChoice.toggleBought();
@@ -109,9 +113,10 @@ public class MuleProject extends Application {
                 Exit e = new Exit();
                 t.schedule(e, 50000L);
             } else {
-                int landNumValue = (int) ((Math.random() * 45) + 1);
+                //int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
-                Property landChoice = GridScreenController.getTile(landNumValue);
+                Property landChoice = getProperty((int) Math.random()*5, (int) Math.random()*9);
+                //Property landChoice = GridScreenController.getTile(landNumValue);
                 if (!landChoice.isBought() && !(currentPlayer.getMoney() - landChoice.getValue() < 0)) {
                     landChoice.setOwner(currentPlayer);
                     currentPlayer.addProperty(landChoice);
