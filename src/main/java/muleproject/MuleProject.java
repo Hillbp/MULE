@@ -84,7 +84,7 @@ public class MuleProject extends Application {
                 //TODO: Listen for button press
                 Timer t = new Timer();
                 Exit e = new Exit();
-                t.schedule(e, 50000L);
+                t.schedule(e, 5000L);
             } else {
                 //int landNumValue = (int) ((Math.random() * 45) + 1);
                 Property landChoice = getProperty((int) Math.random()*5, (int) Math.random()*9);

@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
 
 /**
  * Controller for TownScreen.
@@ -20,7 +21,9 @@ import javafx.stage.Stage;
 public class TownScreenController {
 
     private Label title;
-    private Stage dialogStage = (Stage) title.getScene().getWindow();
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private void initialize() {
@@ -29,8 +32,10 @@ public class TownScreenController {
 
     @FXML
     private void handleBack() throws IOException {
+        Stage dialogStage;
+        dialogStage = (Stage) backButton.getScene().getWindow();
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("workInProgressScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("GridScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();

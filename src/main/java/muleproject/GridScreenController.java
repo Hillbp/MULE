@@ -19,8 +19,12 @@ import javafx.scene.Node;
  */
 public class GridScreenController {
 
+    @FXML
     private Label title;
-    private Stage dialogStage = (Stage) title.getScene().getWindow();
+
+    @FXML
+    private Button townButton;
+
     private static Button currButton;
     private static int buttonRow;
     private static int buttonCol;
@@ -32,7 +36,7 @@ public class GridScreenController {
 
     @FXML
     private void initialize() {
-        //TODO nothing needs to happen here?
+
     }
 
     @FXML
@@ -56,8 +60,10 @@ public class GridScreenController {
 
     @FXML
     private void townButtonPress() throws IOException {
+        Stage dialogStage;
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("workInProgressScreen.fxml"));
+        dialogStage = (Stage) townButton.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("TownScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();

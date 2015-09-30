@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="463.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="463.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GridScreenController">
    <children>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
@@ -51,7 +51,7 @@
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="126.0" prefWidth="144.0" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="83.0" prefWidth="106.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="90.0" prefWidth="88.0" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#townButtonPress" prefHeight="124.0" prefWidth="103.0" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="townButton" mnemonicParsing="false" onAction="#townButtonPress" prefHeight="124.0" prefWidth="103.0" text="Town" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="142.0" prefWidth="106.0" text="Buy" GridPane.columnIndex="5" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="115.0" prefWidth="138.0" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#colorButtonPress" prefHeight="114.0" prefWidth="87.0" text="Buy" GridPane.columnIndex="7" GridPane.rowIndex="2" />
