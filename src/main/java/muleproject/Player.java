@@ -31,8 +31,8 @@ public abstract class Player {
         } else {
             money = 1000;
         }
-        food = 0;
-        energy = 0;
+        food = 8;
+        energy = 4;
         smithore = 0;
     }
 
