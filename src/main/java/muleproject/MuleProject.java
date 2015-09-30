@@ -39,8 +39,8 @@ public class MuleProject extends Application {
         primaryStage.show();
 
         propertyGrid = new Property[5][9];
-        for (int row = 0; int < propertyGrid.length; row++) {
-            for (int col = 0; int < propertyGrid[row].length; row++) {
+        for (int row = 0; row < propertyGrid.length; row++) {
+            for (int col = 0; col < propertyGrid[row].length; row++) {
                 propertyNum = (row * 9) + col + 1;
                 propertyGrid[row][col] = new Property(propertyNum, 300, "grass");
             }
