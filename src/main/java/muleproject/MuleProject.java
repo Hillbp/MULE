@@ -81,7 +81,7 @@ public class MuleProject extends Application {
                 //TODO: Listen for button press
                 Timer t = new Timer();
                 Exit e = new Exit();
-                t.schedule(e, 5000L);
+                t.schedule(e, 50000L);
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
@@ -107,7 +107,7 @@ public class MuleProject extends Application {
                 //TODO: Listen for button press
                 Timer t = new Timer();
                 Exit e = new Exit();
-                t.schedule(e, 5000L);
+                t.schedule(e, 50000L);
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
