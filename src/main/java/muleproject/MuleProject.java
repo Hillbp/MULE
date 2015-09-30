@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author Zach and JT
@@ -76,6 +79,9 @@ public class MuleProject extends Application {
             currentPlayer = players.getPlayer(i);
             if (currentPlayer instanceof HumanPlayer) {
                 //TODO: Listen for button press
+                Timer t = new Timer();
+                Exit e = new Exit();
+                t.schedule(e, 5000L);
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
@@ -99,6 +105,9 @@ public class MuleProject extends Application {
             currentPlayer = players.getPlayer(i);
             if (currentPlayer instanceof HumanPlayer) {
                 //TODO: Listen for button press
+                Timer t = new Timer();
+                Exit e = new Exit();
+                t.schedule(e, 5000L);
             } else {
                 int landNumValue = (int) ((Math.random() * 45) + 1);
                 // Need static method that allows a property to be selected from the board.
@@ -110,6 +119,13 @@ public class MuleProject extends Application {
                     currentPlayer.setMoney(currentPlayer.getMoney() - landChoice.getValue());
                 }
             }
+        }
+    }
+
+    private class Exit extends TimerTask {
+        @Override
+        public void run() {
+            int i = 1;
         }
     }
 }
