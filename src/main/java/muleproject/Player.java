@@ -44,7 +44,7 @@ public abstract class Player {
     //TODO Implement this method
     public Property removeProperty(Property p) {
         for (int i = 0; i < propertyLength; i++) {
-            if (properties[i] = p) {
+            if (properties[i] == p) {
                 properties[i] = null;
                 propertyLength--;
                 return p;
