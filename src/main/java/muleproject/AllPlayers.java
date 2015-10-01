@@ -66,8 +66,8 @@ public class AllPlayers{
         return false;
     }
 
-    /*
-     *this method checks to see if the array already contains
+    /**
+     * this method checks to see if the array already contains
      * a player with this color
      *
      * need to make a getColor() method, but where?
