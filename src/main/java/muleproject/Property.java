@@ -7,11 +7,15 @@ public class Property {
     private boolean isBought = false;
     private boolean hasMule;
     private Player owner;
+    private int col;
+    private int row;
 
-    public Property(int num, int value, String type) {
+    public Property(int num, int value, String type, int row, int col) {
         propNum = num;
         propValue = value;
         propType = type;
+        this.row = row;
+        this.col = col;
     }
 
     public int getNum() {
@@ -52,5 +56,21 @@ public class Property {
 
     public void setOwner(Player newOwner) {
         owner = newOwner;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
     }
 }

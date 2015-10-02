@@ -47,7 +47,13 @@ public class GridScreenController {
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
         for (int i = 0; i < 4; i++) {
-            
+            Property[] properties = MuleProject.players.getPlayer(i).getProperties();
+            for (int j = 0; j < properties.length; j++) {
+                if (properties[j] != null) {
+                    Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
+                    buttonChoice.fire();
+                }
+            }
         }
     }
 
@@ -68,13 +74,24 @@ public class GridScreenController {
         landPhase.nextTurn();
     }
 
+    public Node getNodeByRowColumnIndex(int row, int column, ObservableList<Node> children) {
+        Node result = null;
+        for (Node node : children) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
+                result = node;
+                break;
+            }
+        }
+        return result;
+    }    
+
     private Property getProperty(int x, int y) {
         return MuleProject.propertyGrid[x][y];
     }
 
     @FXML
     private void endTurnButtonPress() throws IOException {
-        //TODO end currentplayer's turn
+        landPhase.nextTurn();
     }
 
     @FXML

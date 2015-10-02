@@ -41,7 +41,7 @@ public class MuleProject extends Application {
         for (int row = 0; row < propertyGrid.length; row++) {
             for (int col = 0; col < propertyGrid[row].length; col++) {
                 int propertyNum = (row * 9) + col + 1;
-                propertyGrid[row][col] = new Property(propertyNum, 300, "grass");
+                propertyGrid[row][col] = new Property(propertyNum, 300, "grass", row, col);
             }
         }
     }

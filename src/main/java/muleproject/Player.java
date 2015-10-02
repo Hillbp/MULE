@@ -58,6 +58,10 @@ public abstract class Player {
         return null;
     }
 
+    public Property[] getProperties() {
+        return properties;
+    }
+    
     public int calculateScore(Player p) {
         return ((p.propertyLength*500) + p.getMoney() +
                 p.getFood()*30 + p.getEnergy()*25 + p.getSmithore()*50);
