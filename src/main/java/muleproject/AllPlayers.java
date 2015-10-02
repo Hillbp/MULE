@@ -2,9 +2,13 @@ import javafx.scene.paint.Color;
 
 public class AllPlayers{
 
-	private Player[] playerList = new Player[4];
-	private int numPlayers = 0;
+	private Player[] playerList;
+	private int numPlayers;
 
+    public AllPlayers() {
+        playerList = new Player[4];
+        numPlayers = 0;
+    }
     /**
      * this method will tell which player is currently
      * selecting his options; do this by counting the
