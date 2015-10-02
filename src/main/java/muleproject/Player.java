@@ -61,7 +61,6 @@ public abstract class Player {
     public int calculateScore(Player p) {
         return ((p.propertyLength*500) + p.getMoney() +
                 p.getFood()*30 + p.getEnergy()*25 + p.getSmithore()*50)
-    }
 
     public void calculateProduction() {
         int i = 0;
