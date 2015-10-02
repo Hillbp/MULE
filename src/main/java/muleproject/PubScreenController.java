@@ -15,16 +15,16 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
 /**
- * Controller for TownScreen.
+ * Controller for PubScreen.
  * @author Christa
  */
-public class TownScreenController {
+public class PubScreenController {
 
     private Label title;
 
     @FXML
-    private Button backButton;
-    private Button pubButton;
+    private Button exitButton;
+    private Button gambleButton;
 
     @FXML
     private void initialize() {
@@ -32,23 +32,16 @@ public class TownScreenController {
     }
 
     @FXML
-    private void handlePub() throws IOException {
-        Stage dialogStage;
-        dialogStage = (Stage) pubButton.getScene().getWindow();
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource("PubScreen.fxml"));
-        //TODO this does not work properly
-        Scene scene = new Scene(root);
-        dialogStage.setScene(scene);
-        dialogStage.show();
+    private void gambleButtonPress() throws IOException {
+        //TODO insert gambling logic here
     }
 
     @FXML
-    private void handleBack() throws IOException {
+    private void exitButtonPress() throws IOException {
         Stage dialogStage;
-        dialogStage = (Stage) backButton.getScene().getWindow();
+        dialogStage = (Stage) exitButton.getScene().getWindow();
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("GridScreen.fxml"));
+        root = FXMLLoader.load(getClass().getResource("TownScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
