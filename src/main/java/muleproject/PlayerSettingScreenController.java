@@ -89,6 +89,7 @@ public class PlayerSettingScreenController {
                 // Calls the main game screen (work in progress for now.) Also
                 // adds CPUs to the array in AllPlayers.
                 MuleProject.players.addCPUs();
+                MuleProject.players.toString();
                 Parent root;
                 root = FXMLLoader.load(getClass().getResource(
                         "GridScreen.fxml"));

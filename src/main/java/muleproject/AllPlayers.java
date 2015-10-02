@@ -25,7 +25,7 @@ public class AllPlayers{
      * @param player player to add
      */
     public void addPlayer(HumanPlayer player) {
-        playerList[this.currentPlayerSettingsNum()] = player;
+        playerList[numPlayers] = player;
         numPlayers++;
     }
 
@@ -45,7 +45,7 @@ public class AllPlayers{
      */
     public void addCPUs() {
         int playernum = playerCount();
-        for (int i = playernum - 1; i < 4; i++) {
+        for (int i = playernum; i < 4; i++) {
             playerList[i] = new AIPlayer();
         }
     }
@@ -93,4 +93,12 @@ public class AllPlayers{
         return playerList[index];
     }
 
+    public String toString() {
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Player name: " + playerList[i].getName());
+            System.out.println("Player race: " + playerList[i].getRace());
+            System.out.println("Player color: " + playerList[i].getColor() + "\n");
+        }
+        return "";
+    }
 }

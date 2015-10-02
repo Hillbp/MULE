@@ -10,8 +10,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 /**
  *
@@ -45,13 +44,6 @@ public class MuleProject extends Application {
                 propertyGrid[row][col] = new Property(propertyNum, 300, "grass");
             }
         }
-        for (int turnCount = 1; turnCount <= 12; turnCount++) {
-            if (turnCount < 3) {
-                initLandGrants();
-            } else {
-                initLandPurchase();
-            }
-        }
     }
 
     public static Property getProperty(int col, int row) {
@@ -70,67 +62,4 @@ public class MuleProject extends Application {
         launch(args);
     }
     
-    /**
-     * This method initiates the land grant phase of a turn. Each player gets to
-     * choose a tile for free. Only takes place in the first 2 turns.
-     */
-    public void initLandGrants() {
-        boolean landCheck;
-        //Goes through every player's turn
-        for (int i = 0; i < 4; i++) {
-            //This method gets the player at an index in the array.
-            currentPlayer = players.getPlayer(i);
-            if (currentPlayer instanceof HumanPlayer) {
-                //TODO: Listen for button press
-                Timer t = new Timer();
-                Exit e = new Exit();
-                t.schedule(e, 5000L);
-            } else {
-                //int landNumValue = (int) ((Math.random() * 45) + 1);
-                Property landChoice = getProperty((int) Math.random()*5, (int) Math.random()*9);
-                // Need static method that allows a property to be selected from the board.
-                //Property landChoice = Property.getNum(landNumValue);
-                if (!landChoice.isBought()) {
-                    landChoice.setOwner(currentPlayer);
-                    landChoice.toggleBought();
-                }
-            }
-        }
-    }
-
-    /**
-     * This method initiates the land grant phase of a turn after turn 2. Each player gets to
-     * choose a tile and buy it for money.
-     */
-    public void initLandPurchase() {
-        boolean landCheck;
-        for (int i = 0; i < 4; i++) {
-            //This method gets the player at an index in the array.
-            currentPlayer = players.getPlayer(i);
-            if (currentPlayer instanceof HumanPlayer) {
-                //TODO: Listen for button press
-                Timer t = new Timer();
-                Exit e = new Exit();
-                t.schedule(e, 50000L);
-            } else {
-                //int landNumValue = (int) ((Math.random() * 45) + 1);
-                // Need static method that allows a property to be selected from the board.
-                Property landChoice = getProperty((int) Math.random()*5, (int) Math.random()*9);
-                //Property landChoice = GridScreenController.getTile(landNumValue);
-                if (!landChoice.isBought() && !(currentPlayer.getMoney() - landChoice.getValue() < 0)) {
-                    landChoice.setOwner(currentPlayer);
-                    currentPlayer.addProperty(landChoice);
-                    landChoice.toggleBought();
-                    currentPlayer.setMoney(currentPlayer.getMoney() - landChoice.getValue());
-                }
-            }
-        }
-    }
-
-    private class Exit extends TimerTask {
-        @Override
-        public void run() {
-            int i = 1;
-        }
-    }
 }
