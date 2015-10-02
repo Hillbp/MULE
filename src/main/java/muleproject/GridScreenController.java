@@ -37,20 +37,17 @@ public class GridScreenController {
     private static int buttonCol;
     private LandSelection landPhase;
 
-    //TODO Implement this method
-    public static Property getTile(int i) {
-        return null;
-    }
-
     @FXML
     private void initialize() {
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
         for (int i = 0; i < 4; i++) {
+            String color = MuleProject.players.getPlayer(i).getColor();
             Property[] properties = MuleProject.players.getPlayer(i).getProperties();
             for (int j = 0; j < properties.length; j++) {
                 if (properties[j] != null) {
                     Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
+                    buttonChoice.setStyle("-fx-background-color: " + color);
                     buttonChoice.fire();
                 }
             }
@@ -60,18 +57,18 @@ public class GridScreenController {
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();
-        currButton = b;
-        String rawString = landPhase.currentPlayer().getColor();
-        //b.setStyle("-fx-background-color: darkblue");
-        b.setStyle("-fx-background-color: " + rawString);
-        System.out.println(b.getLayoutX());
-        System.out.println(b.getText());
-        //not sure if this will work
-        Node source = (Node) ev.getSource();
-        buttonCol = GridPane.getColumnIndex(source);
-        buttonRow = GridPane.getRowIndex(source);
-        landPhase.currentPlayer().addProperty(getProperty(buttonRow, buttonCol));
-        landPhase.nextTurn();
+        int x = GridPane.getRowIndex(b);
+        int y = GridPane.getColumnIndex(b);
+        Property property = getProperty(x, y);
+        if (!property.isBought()) {
+            String rawString = landPhase.currentPlayer().getColor();
+            b.setStyle("-fx-background-color: " + rawString);
+            System.out.println(b.getLayoutX());
+            System.out.println(b.getText());
+            landPhase.currentPlayer().addProperty(property);
+            property.toggleBought();
+            landPhase.nextTurn();
+        }
     }
 
     public Node getNodeByRowColumnIndex(int row, int column, ObservableList<Node> children) {
