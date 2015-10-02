@@ -44,9 +44,9 @@ public class AllPlayers{
      *
      */
     public void addCPUs() {
-        int playernum = playerCount();
-        for (int i = playernum; i < 4; i++) {
+        for (int i = numPlayers; i < 4; i++) {
             playerList[i] = new AIPlayer();
+            numPlayers++;
         }
     }
 
