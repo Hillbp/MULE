@@ -1,5 +1,7 @@
 import javafx.scene.paint.Color;
 
+import java.util.PriorityQueue;
+
 public class AllPlayers{
 
 	private Player[] playerList;
@@ -49,6 +51,14 @@ public class AllPlayers{
             numPlayers++;
         }
     }
+
+    /*public PlayerList getTurnOrder(PlayerList list) {
+        PriorityQueue PQ = new PriorityQueue(4);
+        for (int i = 0; i < 4; i++) {
+            PQ.add(calculateScore(list[i]));
+        }
+    }
+    */
 
     /**
      * this method checks to see if the array already contains
