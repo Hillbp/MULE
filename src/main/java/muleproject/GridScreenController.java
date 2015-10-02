@@ -120,15 +120,16 @@ public class GridScreenController {
     private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();
         currButton = b;
-        String parsedString = LandSelection.currentPlayer().getColor().toString().substring(2);
+        String rawString = LandSelection.currentPlayer().getColor();
         //b.setStyle("-fx-background-color: darkblue");
-        b.setStyle("-fx-background-color: " + parsedString);
+        b.setStyle("-fx-background-color: " + rawString);
         System.out.println(b.getLayoutX());
         System.out.println(b.getText());
         //not sure if this will work
         Node source = (Node) ev.getSource();
         buttonCol = GridPane.getColumnIndex(source);
         buttonRow = GridPane.getRowIndex(source);
+        LandSelection.nextTurn();
     }
 
     @FXML

@@ -78,7 +78,7 @@ public class AllPlayers{
      *
      * @return boolean whether contains color or not
      */
-    public boolean containsColor(Color playerColor) {
+    public boolean containsColor(String playerColor) {
         for (int i = 0; i <= numPlayers; i++) {
             if (playerList[i] != null) {
                 if (playerList[i].getColor().equals(playerColor)) {

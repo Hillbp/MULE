@@ -3,7 +3,7 @@ import javafx.scene.paint.Color;
 public abstract class Player {
     private String name;
     private String race;
-    private Color color;
+    private String color;
     private int money;
     private int food;
     private int energy;
@@ -13,11 +13,16 @@ public abstract class Player {
     private int propertyLength = 0;
 
 
-    public Player(String name, String race, Color color) {
-	this.name = name;
-	this.race = race;
-	this.color = color;
-    initPlayer();
+    public Player(String name, String race) {
+        this.name = name;
+        this.race = race;
+        initPlayer();
+    }
+    public Player(String name, String race, String color) {
+	    this.name = name;
+	    this.race = race;
+	    this.color = color;
+        initPlayer();
     }
 
 	/*Here there will be other methods that apply to both Player types,
@@ -72,7 +77,7 @@ public abstract class Player {
         return race;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
@@ -100,7 +105,7 @@ public abstract class Player {
         this.race = race;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

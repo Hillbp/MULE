@@ -25,7 +25,7 @@ import javafx.scene.Parent;
 public class PlayerSettingScreenController {
     
     @FXML
-    private ColorPicker colorPicker;
+    private MenuButton colorPicker;
     
     @FXML
     private MenuButton racePicker;
@@ -38,6 +38,7 @@ public class PlayerSettingScreenController {
     
     final private int NUM_PLAYERS = Settings.getPlayers();
     private String tempRace;
+    private String tempColor;
     private String playerNumber = Integer.toString( MuleProject.players.currentPlayerSettingsNum());
     
     /**
@@ -75,7 +76,7 @@ public class PlayerSettingScreenController {
             Stage dialogStage; 
             dialogStage = (Stage) playerNum.getScene().getWindow();
             HumanPlayer newPlayer = new HumanPlayer(
-                    playerName.getText(), tempRace.toString(), colorPicker.getValue());
+                    playerName.getText(), tempRace.toString(), tempColor);
             // This is where the player is added to the player array in AllPlayers.
             // This must also increment a value in AllPlayers that keeps track
             // of the number of human players.
@@ -172,7 +173,26 @@ public class PlayerSettingScreenController {
     private void handleGollumer() {
         tempRace = "Gollumer";
     }
+
+    @FXML
+    private void handleGold() {
+        tempColor = "gold";
+    }
     
+    @FXML
+    private void handleBlack() {
+        tempColor = "black";
+    }
+
+    @FXML
+    private void handleWhite() {
+        tempColor = "white";
+    }
+
+    @FXML
+    private void handleNavy() {
+        tempColor = "darkblue";
+    }
     /**
      * Called to check if input on player select screen is valid. Requires
      * contains method in the AllPlayers class to check and see if the current
@@ -196,7 +216,7 @@ public class PlayerSettingScreenController {
             errorMessage += "Please choose a race to play as\n";
         }
         
-        if (MuleProject.players.containsColor(colorPicker.getValue())) {
+        if (MuleProject.players.containsColor(tempColor)) {
             errorMessage += "Please choose a different color than your opponent\n";
         }
         
