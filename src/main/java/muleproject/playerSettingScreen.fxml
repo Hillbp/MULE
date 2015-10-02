@@ -43,7 +43,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <MenuButton layoutX="51.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="85.0">
+                  <MenuButton layoutX="73.0" layoutY="85.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="85.0">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#handlePacker" text="Packer" />
                       <MenuItem mnemonicParsing="false" onAction="#handleSpheroid" text="Spheroid" />
@@ -55,7 +55,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleGollumer" text="Gollumer" />
                     </items>
                   </MenuButton>
-                  <Label layoutX="80.0" layoutY="14.0" text="Race" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="14.0">
+                  <Label layoutX="101.0" layoutY="14.0" text="Race" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="DejaVu Sans Mono Bold" size="17.0" />
                      </font>
@@ -64,12 +64,19 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ColorPicker fx:id="colorPicker" layoutX="60.0" layoutY="85.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="85.0" />
                   <Label layoutX="74.0" layoutY="14.0" text="Color" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="DejaVu Sans Mono Bold" size="17.0" />
                      </font>
                   </Label>
+                  <MenuButton layoutX="82.0" layoutY="85.0" mnemonicParsing="false">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleGold" text="Gold" />
+                      <MenuItem mnemonicParsing="false" onAction="#handleWhite" text="White" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleBlack" text="Black" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNavy" text="Navy" />
+                    </items>
+                  </MenuButton>
                </children>
             </AnchorPane>
          </children>
