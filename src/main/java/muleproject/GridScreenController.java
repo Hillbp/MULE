@@ -72,14 +72,11 @@ public class GridScreenController {
     }
 
     public Node getNodeByRowColumnIndex(int row, int column, ObservableList<Node> children) {
-        Node result = null;
         for (Node node : children) {
             if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-                result = node;
-                break;
+                return node;
             }
         }
-        return result;
     }    
 
     private Property getProperty(int x, int y) {
