@@ -130,6 +130,13 @@ public abstract class Player {
         this.food = food;
     }
 
+    public void addFood(int food) {
+        this.food = this.food + food;
+        if (this.food < 0) {
+            this.food = 0;
+        }
+    }
+
     public void setEnergy(int energy) {
         this.energy = energy;
     }

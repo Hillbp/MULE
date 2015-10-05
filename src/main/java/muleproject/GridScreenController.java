@@ -36,12 +36,15 @@ public class GridScreenController {
     private static int buttonRow;
     private static int buttonCol;
     private LandSelection landPhase;
+    private Timer turnTimer;
 
     @FXML
     private void initialize() {
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
+        turnTimer = new Timer();
         for (int i = 0; i < 4; i++) {
+            calculateTime(i);
             String color = MuleProject.players.getPlayer(i).getColor();
             Property[] properties = MuleProject.players.getPlayer(i).getProperties();
             for (int j = 0; j < properties.length; j++) {
@@ -51,6 +54,24 @@ public class GridScreenController {
                     buttonChoice.fire();
                 }
             }
+        }
+    }
+
+    //TODO Implement food requirements for different rounds
+    private void calculateTime(int i) {
+        Player current = MuleProject.players.getPlayer(i);
+        if (current instanceof HumanPlayer) {
+            long turnTime;
+            if (current.getFood() > 3) {
+                current.addFood(-3);
+                turnTime = 50000L;
+            } else if (current.getFood() > 0) {
+                current.setFood(0);
+                turnTime = 30000L;
+            } else {
+                turnTime = 5000L;
+            }
+            turnTimer.schedule(new EndTurn(), turnTime);
         }
     }
 
@@ -80,7 +101,7 @@ public class GridScreenController {
             }
         }
         return result;
-    }    
+    }
 
     private Property getProperty(int x, int y) {
         return MuleProject.propertyGrid[x][y];
@@ -103,10 +124,10 @@ public class GridScreenController {
     }
 
 
-    private class Exit extends TimerTask {
+    private class EndTurn extends TimerTask {
         @Override
         public void run() {
-            int i = 1;
+            landPhase.nextTurn();
         }
     }
 
