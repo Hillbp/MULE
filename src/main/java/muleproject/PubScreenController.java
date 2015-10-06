@@ -23,6 +23,7 @@ public class PubScreenController {
 
     private Label title;
     private Player player;
+    private Turn turn;
 
     @FXML
     private Button exitButton;
@@ -52,16 +53,16 @@ public class PubScreenController {
         } else if (/*timer from 11-0 seconds*/) {
             i = randInt(0, 50);
         }
-        if (/* turn == 1 || 2 || 3*/) {
+        if (turn.getTurnNumber() == 1 || 2 || 3) {
             i += 50;
         }
-        if (/* turn == 4 || 5 || 6 || 7*/) {
+        if (turn.getTurnNumber() == 4 || 5 || 6 || 7) {
             i += 100;
         }
-        if (/* turn == 8 || 9 || 10 || 11*/) {
+        if (turn.getTurnNumber() == 8 || 9 || 10 || 11) {
             i += 150;
         }
-        if (/* turn == 12*/) {
+        if (turn.getTurnNumber() == 12) {
             i += 200;
         }
         int m = player.getMoney();
