@@ -53,13 +53,13 @@ public class PubScreenController {
         } else if (/*timer from 11-0 seconds*/) {
             i = randInt(0, 50);
         }
-        if (turn.getTurnNumber() == 1 || 2 || 3) {
+        if (turn.getTurnNumber() == 1 || turn.getTurnNumber() == 2 || turn.getTurnNumber() == 3) {
             i += 50;
         }
-        if (turn.getTurnNumber() == 4 || 5 || 6 || 7) {
+        if (turn.getTurnNumber() == 4 || turn.getTurnNumber() == 5 || turn.getTurnNumber() == 6 || turn.getTurnNumber() == 7) {
             i += 100;
         }
-        if (turn.getTurnNumber() == 8 || 9 || 10 || 11) {
+        if (turn.getTurnNumber() == 8 || turn.getTurnNumber() == 9 || turn.getTurnNumber() == 10 || turn.getTurnNumber() == 11) {
             i += 150;
         }
         if (turn.getTurnNumber() == 12) {
