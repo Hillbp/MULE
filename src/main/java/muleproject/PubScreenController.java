@@ -66,7 +66,11 @@ public class PubScreenController {
             i += 200;
         }
         int m = player.getMoney();
-        player.setMoney(m + i);
+        if (i < 250) {
+            player.setMoney(m + i);
+        } else {
+            player.setMoney(m + 250);
+        }
     }
 
     @FXML
