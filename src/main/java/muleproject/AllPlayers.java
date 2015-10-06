@@ -52,13 +52,18 @@ public class AllPlayers{
         }
     }
 
-    /*public PlayerList getTurnOrder(PlayerList list) {
+    public Player[] getTurnOrder(Player p) {
         PriorityQueue PQ = new PriorityQueue(4);
-        for (int i = 0; i < 4; i++) {
-            PQ.add(calculateScore(list[i]));
+        for (int i = 4; i >= 0; i--) {
+            PQ.add(calculateScore(p));
         }
+        for (int j = 4; j >= 0; j--) {
+            if (p.getScore() == PQ.poll) {
+                playerList[j] = p;
+            }
+        }
+        return playerList;
     }
-    */
 
     /**
      * this method checks to see if the array already contains
