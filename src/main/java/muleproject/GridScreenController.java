@@ -12,8 +12,6 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
-import java.util.Timer;
-import java.util.TimerTask;
 import javafx.collections.ObservableList;
 
 /**
@@ -36,24 +34,28 @@ public class GridScreenController {
     private static int buttonRow;
     private static int buttonCol;
     private LandSelection landPhase;
-    private Timer turnTimer;
+    private long startTime;
+    public static long endTime;
 
     @FXML
     private void initialize() {
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
-        turnTimer = new Timer();
         for (int i = 0; i < 4; i++) {
+            startTime = System.currentTimeMillis();
             calculateTime(i);
             String color = MuleProject.players.getPlayer(i).getColor();
             Property[] properties = MuleProject.players.getPlayer(i).getProperties();
-            for (int j = 0; j < properties.length; j++) {
-                if (properties[j] != null) {
-                    Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
-                    buttonChoice.setStyle("-fx-background-color: " + color);
-                    buttonChoice.fire();
+            while (endTime > System.currentTimeMillis();){
+                for (int j = 0; j < properties.length; j++) {
+                    if (properties[j] != null) {
+                        Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
+                        buttonChoice.setStyle("-fx-background-color: " + color);
+                        buttonChoice.fire();
+                    }
                 }
             }
+            landPhase.nextTurn();
         }
     }
 
@@ -61,17 +63,15 @@ public class GridScreenController {
     private void calculateTime(int i) {
         Player current = MuleProject.players.getPlayer(i);
         if (current instanceof HumanPlayer) {
-            long turnTime;
             if (current.getFood() > 3) {
                 current.addFood(-3);
-                turnTime = 50000L;
+                endTime = startTime + 50000L;
             } else if (current.getFood() > 0) {
                 current.setFood(0);
-                turnTime = 30000L;
+                endTime = startTime + 30000L;
             } else {
-                turnTime = 5000L;
+                endTime = startTime + 5000L;
             }
-            turnTimer.schedule(new EndTurn(), turnTime);
         }
     }
 
@@ -121,14 +121,6 @@ public class GridScreenController {
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
-    }
-
-
-    private class EndTurn extends TimerTask {
-        @Override
-        public void run() {
-            landPhase.nextTurn();
-        }
     }
 
     public void nextScreen() throws IOException {
