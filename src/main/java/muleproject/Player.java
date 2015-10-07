@@ -32,10 +32,13 @@ public abstract class Player {
     public void initPlayer() {
         if (race.equals("Human")) {
             money = 600;
+            score = 600;
         } else if (race.equals("Flapper")) {
             money = 1600;
+            score = 1600;
         } else {
             money = 1000;
+            score = 1000;
         }
         food = 8;
         energy = 4;
