@@ -45,13 +45,13 @@ public class PubScreenController {
         //Money Bonus = Round Bonus * random between 0 and Time Bonus.
         int i = 0;
         long time = GridScreenController.endTime - System.currentTimeMillis();
-        if (time > 5000 && time > 3700) {
+        if (time <= 50000 && time >= 37000) {
             i = randInt(0, 200);
-        } else if (time > 3600 && time > 2500) {
+        } else if (time < 37000 && time >= 25000) {
             i = randInt(0, 150);
-        } else if (time > 2400 && time > 1200) {
+        } else if (time < 25000 && time >= 12000) {
             i = randInt(0, 100);
-        } else if (time > 1100 && time > 0) {
+        } else if (time < 12000 && time >= 0) {
             i = randInt(0, 50);
         }
         if (turn.getTurnNumber() == 1 || turn.getTurnNumber() == 2 || turn.getTurnNumber() == 3) {
