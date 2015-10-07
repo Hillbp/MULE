@@ -125,7 +125,7 @@ public class GridScreenController {
     }
 
     public void nextScreen() throws IOException {
-        Turn.nextTurn;
+        turn.nextTurn();
         Stage dialogStage;
         Parent root;
         dialogStage = (Stage) townButton.getScene().getWindow();

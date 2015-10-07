@@ -85,6 +85,7 @@ public abstract class Player {
     }
 
     public int getScore() {
+        score = calculateScore(this);
         return score;
     }
 

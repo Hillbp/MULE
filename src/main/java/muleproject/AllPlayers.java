@@ -76,9 +76,8 @@ public class AllPlayers{
      * implement that part
      */
     public Player getTurnOrder() {
-        while (PQ != null) {
-            return PQ.poll();
-        }
+            return (Player) PQ.poll();
+
 
     }
 
@@ -88,7 +87,7 @@ public class AllPlayers{
      * in what order
      */
 
-    @Override
+    //@Override
     public int compareTo(Player p) {
         if (this.getScore() < p.getScore()) {
             return -1;
