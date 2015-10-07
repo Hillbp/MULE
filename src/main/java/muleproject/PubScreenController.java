@@ -53,16 +53,16 @@ public class PubScreenController {
         } else if (time < 12000 && time >= 0) {
             i = randInt(0, 50);
         }
-        if (curTurn.getTurnNumber() == 1 || curTurn.getTurnNumber() == 2 || curTurn.getTurnNumber() == 3) {
+        if (curTurn.getRoundNumber() == 1 || curTurn.getRoundNumber() == 2 || curTurn.getRoundNumber() == 3) {
             i += 50;
         }
-        if (curTurn.getTurnNumber() == 4 || curTurn.getTurnNumber() == 5 || curTurn.getTurnNumber() == 6 || curTurn.getTurnNumber() == 7) {
+        if (curTurn.getRoundNumber() == 4 || curTurn.getRoundNumber() == 5 || curTurn.getRoundNumber() == 6 || curTurn.getRoundNumber() == 7) {
             i += 100;
         }
-        if (curTurn.getTurnNumber() == 8 || curTurn.getTurnNumber() == 9 || curTurn.getTurnNumber() == 10 || curTurn.getTurnNumber() == 11) {
+        if (curTurn.getRoundNumber() == 8 || curTurn.getRoundNumber() == 9 || curTurn.getRoundNumber() == 10 || curTurn.getRoundNumber() == 11) {
             i += 150;
         }
-        if (curTurn.getTurnNumber() == 12) {
+        if (curTurn.getRoundNumber() == 12) {
             i += 200;
         }
         int m = player.getMoney();
