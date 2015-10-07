@@ -26,6 +26,7 @@ public abstract class Player {
         initPlayer();
     }
 
+
 	/*Here there will be other methods that apply to both Player types,
 		such as health, money, etc.*/
 
