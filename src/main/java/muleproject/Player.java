@@ -26,16 +26,20 @@ public abstract class Player {
         initPlayer();
     }
 
+
 	/*Here there will be other methods that apply to both Player types,
 		such as health, money, etc.*/
 
     public void initPlayer() {
         if (race.equals("Human")) {
             money = 600;
+            score = 600;
         } else if (race.equals("Flapper")) {
             money = 1600;
+            score = 1600;
         } else {
             money = 1000;
+            score = 1000;
         }
         food = 8;
         energy = 4;
@@ -81,6 +85,7 @@ public abstract class Player {
     }
 
     public int getScore() {
+        score = calculateScore(this);
         return score;
     }
 

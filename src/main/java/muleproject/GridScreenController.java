@@ -36,6 +36,7 @@ public class GridScreenController {
     private LandSelection landPhase;
     private long startTime;
     public static long endTime;
+    public static Turn turn;
 
     @FXML
     private void initialize() {
@@ -124,6 +125,7 @@ public class GridScreenController {
     }
 
     public void nextScreen() throws IOException {
+        turn.nextTurn();
         Stage dialogStage;
         Parent root;
         dialogStage = (Stage) townButton.getScene().getWindow();

@@ -41,8 +41,7 @@ public class PubScreenController {
     }
     @FXML
     private void gambleButtonPress() throws IOException {
-        //TODO insert gambling logic here
-        //Money Bonus = Round Bonus * random between 0 and Time Bonus.
+        Turn curTurn = GridScreenController.turn;
         int i = 0;
         long time = GridScreenController.endTime - System.currentTimeMillis();
         if (time <= 50000 && time >= 37000) {
@@ -54,16 +53,16 @@ public class PubScreenController {
         } else if (time < 12000 && time >= 0) {
             i = randInt(0, 50);
         }
-        if (turn.getTurnNumber() == 1 || turn.getTurnNumber() == 2 || turn.getTurnNumber() == 3) {
+        if (curTurn.getRoundNumber() == 1 || curTurn.getRoundNumber() == 2 || curTurn.getRoundNumber() == 3) {
             i += 50;
         }
-        if (turn.getTurnNumber() == 4 || turn.getTurnNumber() == 5 || turn.getTurnNumber() == 6 || turn.getTurnNumber() == 7) {
+        if (curTurn.getRoundNumber() == 4 || curTurn.getRoundNumber() == 5 || curTurn.getRoundNumber() == 6 || curTurn.getRoundNumber() == 7) {
             i += 100;
         }
-        if (turn.getTurnNumber() == 8 || turn.getTurnNumber() == 9 || turn.getTurnNumber() == 10 || turn.getTurnNumber() == 11) {
+        if (curTurn.getRoundNumber() == 8 || curTurn.getRoundNumber() == 9 || curTurn.getRoundNumber() == 10 || curTurn.getRoundNumber() == 11) {
             i += 150;
         }
-        if (turn.getTurnNumber() == 12) {
+        if (curTurn.getRoundNumber() == 12) {
             i += 200;
         }
         int m = player.getMoney();

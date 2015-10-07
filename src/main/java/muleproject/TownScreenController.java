@@ -25,6 +25,7 @@ public class TownScreenController {
     @FXML
     private Button backButton;
     private Button pubButton;
+    private Button storeButton;
 
     @FXML
     private void initialize() {
@@ -37,6 +38,17 @@ public class TownScreenController {
         dialogStage = (Stage) backButton.getScene().getWindow();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("PubScreen.fxml"));
+        Scene scene = new Scene(root);
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void handleStore() throws IOException {
+        Stage dialogStage;
+        dialogStage = (Stage) backButton.getScene().getWindow();
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource("StoreScreen.fxml"));
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();

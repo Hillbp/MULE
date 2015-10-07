@@ -6,6 +6,7 @@ public class AllPlayers{
 
 	private Player[] playerList;
 	private int numPlayers;
+    private PriorityQueue PQ;
 
     public AllPlayers() {
         playerList = new Player[4];
@@ -52,17 +53,49 @@ public class AllPlayers{
         }
     }
 
-    public Player[] getTurnOrder(Player p) {
-        PriorityQueue PQ = new PriorityQueue(4);
+
+    /*
+     * this method is supposed to initialize the queue
+     * or add the elements outside of the getTurnOrder
+     * method so that it doesn't add the players to the
+     * queue each time while trying to remove an item
+     */
+
+    public PriorityQueue getPriorityQueue() {
+        PriorityQueue PQ = new PriorityQueue();
         for (int i = 4; i >= 0; i--) {
-            PQ.add(p.calculateScore());
+            PQ.add(playerList[i]);
         }
-        for (int j = 4; j >= 0; j--) {
-            if (PQ.poll().equals(p.getScore())) {
-                playerList[j] = p;
-            }
+        return PQ;
+    }
+
+    /*
+     *Supposed to remove the lowest score from the queue
+     * until none are left, which is when we'll
+     * know to start a new round; not sure how to
+     * implement that part
+     */
+    public Player getTurnOrder() {
+            return (Player) PQ.poll();
+
+
+    }
+
+    /*
+     *supposed to compare the players by score
+     * so the priority queue knows which to remove
+     * in what order
+     */
+
+    //@Override
+    public int compareTo(Player p) {
+        if (this.getScore() < p.getScore()) {
+            return -1;
+        } else if (this.getScore() > p.getScore()) {
+            return 1;
+        } else {
+            return 0;
         }
-        return playerList;
     }
 
     /**
