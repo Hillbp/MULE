@@ -36,6 +36,7 @@ public class GridScreenController {
     private LandSelection landPhase;
     private long startTime;
     public static long endTime;
+    public static Turn turn;
 
     @FXML
     private void initialize() {
