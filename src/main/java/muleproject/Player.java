@@ -8,6 +8,7 @@ public abstract class Player {
     private int food;
     private int energy;
     private int smithore;
+    private int score;
 
     private Property[] properties = new Property[32];
     private int propertyLength = 0;
@@ -63,8 +64,9 @@ public abstract class Player {
     }
     
     public int calculateScore(Player p) {
-        return ((p.propertyLength*500) + p.getMoney() +
+        score = ((p.propertyLength*500) + p.getMoney() +
                 p.getFood()*30 + p.getEnergy()*25 + p.getSmithore()*50);
+        return score;
     }
 
     public void calculateProduction() {
@@ -76,6 +78,10 @@ public abstract class Player {
         while (i < propertyLength) {
             Property prop = properties[i];
         }
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public String getName() {

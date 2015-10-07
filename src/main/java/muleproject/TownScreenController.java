@@ -34,10 +34,9 @@ public class TownScreenController {
     @FXML
     private void handlePub() throws IOException {
         Stage dialogStage;
-        dialogStage = (Stage) pubButton.getScene().getWindow();
+        dialogStage = (Stage) backButton.getScene().getWindow();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("PubScreen.fxml"));
-        //TODO this does not work properly
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
