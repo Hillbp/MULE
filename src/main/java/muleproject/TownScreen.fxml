@@ -9,7 +9,7 @@
       <Button layoutX="53.0" layoutY="174.0" mnemonicParsing="false" text="Land Office" />
       <Button layoutX="444.0" layoutY="174.0" mnemonicParsing="false" text="Assay Office" />
       <Button fx:id="pubButton" layoutX="320.0" layoutY="174.0" mnemonicParsing="false" onAction="#handlePub" text="Pub" />
-      <Button layoutX="199.0" layoutY="174.0" mnemonicParsing="false" text="Store" />
+      <Button fx:id="storeButton" layoutX="199.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleStore" text="Store" />
       <Button fx:id="backButton" layoutX="23.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
    </children>
 </AnchorPane>
