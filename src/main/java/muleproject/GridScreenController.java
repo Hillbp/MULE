@@ -46,7 +46,7 @@ public class GridScreenController {
             calculateTime(i);
             String color = MuleProject.players.getPlayer(i).getColor();
             Property[] properties = MuleProject.players.getPlayer(i).getProperties();
-            while (endTime > System.currentTimeMillis();){
+            while (endTime > System.currentTimeMillis()){
                 for (int j = 0; j < properties.length; j++) {
                     if (properties[j] != null) {
                         Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);

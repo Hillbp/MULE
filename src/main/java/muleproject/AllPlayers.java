@@ -55,10 +55,10 @@ public class AllPlayers{
     public Player[] getTurnOrder(Player p) {
         PriorityQueue PQ = new PriorityQueue(4);
         for (int i = 4; i >= 0; i--) {
-            PQ.add(calculateScore(p));
+            PQ.add(p.calculateScore());
         }
         for (int j = 4; j >= 0; j--) {
-            if (p.getScore() == PQ.poll) {
+            if (PQ.poll().equals(p.getScore())) {
                 playerList[j] = p;
             }
         }
