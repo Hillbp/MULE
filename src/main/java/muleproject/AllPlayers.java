@@ -77,26 +77,8 @@ public class AllPlayers{
      */
     public Player getTurnOrder() {
             return (Player) PQ.poll();
-
-
     }
 
-    /*
-     *supposed to compare the players by score
-     * so the priority queue knows which to remove
-     * in what order
-     */
-
-    //@Override
-    public int compareTo(Player p) {
-        if (this.getScore() < p.getScore()) {
-            return -1;
-        } else if (this.getScore() > p.getScore()) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
 
     /**
      * this method checks to see if the array already contains

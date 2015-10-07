@@ -85,9 +85,27 @@ public abstract class Player {
     }
 
     public int getScore() {
-        score = calculateScore(this);
+        score = calculateScore();
         return score;
     }
+
+    /*
+     *supposed to compare the players by score
+     * so the priority queue knows which to remove
+     * in what order
+     */
+
+    //@Override
+    public int compareTo(Player p) {
+        if (this.getScore() < p.getScore()) {
+            return -1;
+        } else if (this.getScore() > p.getScore()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
 
     public String getName() {
         return name;
