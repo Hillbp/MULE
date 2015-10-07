@@ -43,14 +43,15 @@ public class PubScreenController {
     private void gambleButtonPress() throws IOException {
         //TODO insert gambling logic here
         //Money Bonus = Round Bonus * random between 0 and Time Bonus.
-        int i;
-        if (/*timer from 50-37 seconds*/) {
+        int i = 0;
+        long time = GridScreenController.endTime - System.currentTimeMillis();
+        if (time > 5000 && time > 3700) {
             i = randInt(0, 200);
-        } else if (/*timer from 36-25 seconds*/) {
+        } else if (time > 3600 && time > 2500) {
             i = randInt(0, 150);
-        } else if (/*timer from 24-12 seconds*/) {
+        } else if (time > 2400 && time > 1200) {
             i = randInt(0, 100);
-        } else if (/*timer from 11-0 seconds*/) {
+        } else if (time > 1100 && time > 0) {
             i = randInt(0, 50);
         }
         if (turn.getTurnNumber() == 1 || turn.getTurnNumber() == 2 || turn.getTurnNumber() == 3) {
