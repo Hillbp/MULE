@@ -1,6 +1,7 @@
 public class Mule {
     private String type;
     private Property property;
+    private Player owner;
 
     public Mule() {
         type = "";
@@ -25,6 +26,13 @@ public class Mule {
         return property;
     }
 
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setPlayer(Player p) {
+        player = p;
+    }
     @Override
     public boolean equals(Object o) {
         boolean result = false;

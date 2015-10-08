@@ -55,6 +55,7 @@ public abstract class Player {
     }
 
     public void addMule(Mule m) {
+        m.setOwner(this);
         mules[muleNum] = m;
         muleNum++;
     }

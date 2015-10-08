@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MULEtypeDialogController">
+   <children>
+      <Label layoutX="70.0" layoutY="14.0" prefHeight="65.0" prefWidth="341.0" text="Please choose an outfit for your MULE" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleFood" text="Food: $25">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="165.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleEnergy" text="Energy: $50">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="332.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleSmithore" text="Smithore: $75">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelButton" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

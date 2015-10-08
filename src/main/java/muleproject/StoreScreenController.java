@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-
+import javafx.stage.Modality;
 import java.io.IOException;
 
 /**
@@ -134,7 +134,28 @@ public class StoreScreenController {
 
     @FXML
     private void handleBuyMule() {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MuleProject.class.getResource("MULEtypeDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            Stage primaryStage = (Stage) exitButton.getScene().getWindow();
+            dialogStage.setTitle("Choose MULE Type");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            MULEtypeDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMule(new MULE());
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+        }
     }
 
     @FXML
