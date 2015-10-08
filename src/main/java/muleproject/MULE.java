@@ -1,11 +1,37 @@
-private class MULE {
+public class Mule {
     private String type;
+    private Property property;
 
-    private Mule() {
+    public Mule() {
         type = "";
     }
 
-    private Mule(String type) {
+    public Mule(String type) {
         this.type = type;
+    }
+
+    public void setType(String s) {
+        type = s;
+    }
+
+    public void setProperty(Property property) {
+        this.property = property;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public Property getProperty() {
+        return property;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean result = false;
+        if (o instanceof Mule) {
+            Mule that = (Mule) o;
+            result = (this.getType().equals(that.getType()) && this.getProperty().equals(that.getProperty()));
+        }
+        return result;
     }
 }
