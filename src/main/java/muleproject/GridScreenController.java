@@ -40,6 +40,7 @@ public class GridScreenController {
 
     @FXML
     private void initialize() {
+        turn = new Turn();
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
         for (int i = 0; i < 4; i++) {
@@ -47,7 +48,7 @@ public class GridScreenController {
             calculateTime(i);
             String color = MuleProject.players.getPlayer(i).getColor();
             Property[] properties = MuleProject.players.getPlayer(i).getProperties();
-            while (endTime > System.currentTimeMillis()){
+            //while (endTime > System.currentTimeMillis()){
                 for (int j = 0; j < properties.length; j++) {
                     if (properties[j] != null) {
                         Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
@@ -55,7 +56,7 @@ public class GridScreenController {
                         buttonChoice.fire();
                     }
                 }
-            }
+            //}
             landPhase.nextTurn();
         }
     }
@@ -63,8 +64,9 @@ public class GridScreenController {
     //TODO Implement food requirements for different rounds
     private void calculateTime(int i) {
         Player current = MuleProject.players.getPlayer(i);
+        int req = calcReq();
         if (current instanceof HumanPlayer) {
-            if (current.getFood() > 3) {
+            if (current.getFood() >= req) {
                 current.addFood(-3);
                 endTime = startTime + 50000L;
             } else if (current.getFood() > 0) {
@@ -74,6 +76,11 @@ public class GridScreenController {
                 endTime = startTime + 5000L;
             }
         }
+    }
+
+    private int calcReq() {
+        //int turnNum = turn.getTurnNumber();
+        return 3;
     }
 
     @FXML

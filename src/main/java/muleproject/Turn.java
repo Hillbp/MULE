@@ -1,7 +1,7 @@
 import java.util.PriorityQueue;
 
 public class Turn {
-    private int turnNumber;
+    private int turnNumber = 1;
     private int roundNumber;
 
     public int getTurnNumber() {
