@@ -67,7 +67,7 @@ public abstract class Player {
                 for (int j = i + 1; j < properties.length; j++) {
                     properties[j - 1] = properties[j];
                 }
-                properties[properties.length - 1] == null;
+                properties[properties.length - 1] = null;
                 propertyLength--;
             }
         }
@@ -82,7 +82,7 @@ public abstract class Player {
                 for (int j = i + 1; j < mules.length; j++) {
                     mules[j - 1] = mules[j];
                 }
-                mules[mules.length - 1] == null;
+                mules[mules.length - 1] = null;
                 muleNum--;
             }
         }
