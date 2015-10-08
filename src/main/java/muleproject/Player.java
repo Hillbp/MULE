@@ -10,8 +10,10 @@ public abstract class Player {
     private int smithore;
     private int score;
 
+    private Mule[] mules =  new Mule[20];
     private Property[] properties = new Property[32];
     private int propertyLength = 0;
+    private int muleNum;
 
 
     public Player(String name, String race) {
@@ -44,6 +46,7 @@ public abstract class Player {
         food = 8;
         energy = 4;
         smithore = 0;
+        muleNum = 0;
     }
 
     public void addProperty(Property p) {
@@ -51,22 +54,48 @@ public abstract class Player {
         propertyLength++;
     }
 
-    //TODO Implement this method
+    public void addMule(Mule m) {
+        mules[muleNum] = m;
+        muleNum++;
+    }
+
     public Property removeProperty(Property p) {
+        Property removed = null;
         for (int i = 0; i < propertyLength; i++) {
-            if (properties[i] == p) {
-                properties[i] = null;
+            if (properties[i].equals(p)) {
+                removed = properties[i];
+                for (int j = i + 1; j < properties.length; j++) {
+                    properties[j - 1] = properties[j];
+                }
+                properties[properties.length - 1] == null;
                 propertyLength--;
-                return p;
             }
         }
-        return null;
+        return removed;
+    }
+
+    public Mule removeMule(Mule m) {
+        Mule removed = null;
+        for (int i = 0; i < muleNum; i++) {
+            if (mules[i].equals(p)) {
+                removed = mules[i];
+                for (int j = i + 1; j < mules.length; j++) {
+                    mules[j - 1] = mules[j];
+                }
+                mules[mules.length - 1] == null;
+                muleNum--;
+            }
+        }
+        return removed;
     }
 
     public Property[] getProperties() {
         return properties;
     }
     
+    public Mule[] getMules() {
+        return mules;
+    }
     public int calculateScore() {
         score = ((propertyLength*500) + getMoney() +
                 getFood()*30 + getEnergy()*25 + getSmithore()*50);
