@@ -42,7 +42,6 @@ public class StoreScreenController {
         currentPlayer = MuleProject.players.getPlayer(currentTurn.getTurnNumber() % 4);
         energy.setText("Current energy: " + currentPlayer.getEnergy());
         food.setText("Current food: " + currentPlayer.getFood());
-        smithore.setText("Current smithore: " + currentPlayer.getSmithore());
         cash.setText("Current cash: " + currentPlayer.getMoney());
     }
 
@@ -60,7 +59,7 @@ public class StoreScreenController {
     @FXML
     private void handleBuyFood() {
         Stage dialogStage;
-        dialogStage = (Stage) playerNum.getScene().getWindow();
+        dialogStage = (Stage) exitButton.getScene().getWindow();
         if (currentPlayer.getMoney() - 5 > 0) {
             currentPlayer.setMoney(currentPlayer.getMoney() - 5);
             currentPlayer.setFood(currentPlayer.getFood() + 1);
@@ -79,7 +78,7 @@ public class StoreScreenController {
     @FXML
     private void handleSellFood() {
         Stage dialogStage;
-        dialogStage = (Stage) playerNum.getScene().getWindow();
+        dialogStage = (Stage) exitButton.getScene().getWindow();
         if (currentPlayer.getFood() > 0) {
             currentPlayer.setFood(currentPlayer.getFood() - 1);
             currentPlayer.setMoney(currentPlayer.getMoney() + 5);
@@ -98,7 +97,7 @@ public class StoreScreenController {
     @FXML
     private void handleBuyEnergy() {
         Stage dialogStage;
-        dialogStage = (Stage) playerNum.getScene().getWindow();
+        dialogStage = (Stage) exitButton.getScene().getWindow();
         if (currentPlayer.getMoney() - 10 > 0) {
             currentPlayer.setMoney(currentPlayer.getMoney() - 10);
             currentPlayer.setEnergy(currentPlayer.getEnergy() + 1);
@@ -117,7 +116,7 @@ public class StoreScreenController {
     @FXML
     private void handleSellEnergy() {
         Stage dialogStage;
-        dialogStage = (Stage) playerNum.getScene().getWindow();
+        dialogStage = (Stage) exitButton.getScene().getWindow();
         if (currentPlayer.getEnergy() > 0) {
             currentPlayer.setEnergy(currentPlayer.getEnergy() - 1);
             currentPlayer.setMoney(currentPlayer.getMoney() + 10);
