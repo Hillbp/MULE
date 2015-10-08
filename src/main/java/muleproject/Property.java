@@ -73,4 +73,14 @@ public class Property {
     public void setCol(int col) {
         this.col = col;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean result = false;
+        if (o instanceof Property) {
+            Property that = (Property) o;
+            result = (this.getNum() == that.getNum());
+        }
+        return result;
+    }
 }
