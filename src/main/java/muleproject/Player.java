@@ -77,7 +77,7 @@ public abstract class Player {
     public Mule removeMule(Mule m) {
         Mule removed = null;
         for (int i = 0; i < muleNum; i++) {
-            if (mules[i].equals(p)) {
+            if (mules[i].equals(m)) {
                 removed = mules[i];
                 for (int j = i + 1; j < mules.length; j++) {
                     mules[j - 1] = mules[j];
