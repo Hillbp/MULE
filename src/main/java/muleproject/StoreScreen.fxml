@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="exitButton" layoutX="21.0" layoutY="355.0" mnemonicParsing="false" onAction="#exitButtonPress" text="Exit" />
+      <Label layoutX="258.0" layoutY="14.0" text="Store" textAlignment="CENTER" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="91.0" layoutY="129.0" mnemonicParsing="false" text="Buy MULE" />
+      <Button layoutX="384.0" layoutY="129.0" mnemonicParsing="false" text="Buy Food" />
+      <Button layoutX="487.0" layoutY="129.0" mnemonicParsing="false" text="Sell Food" />
+      <Button layoutX="380.0" layoutY="225.0" mnemonicParsing="false" text="Buy Energy" />
+      <Button layoutX="483.0" layoutY="225.0" mnemonicParsing="false" text="Sell Energy" />
+      <Label layoutX="30.0" layoutY="215.0" text="Current Cash: ">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="76.0" text="Current MULEs: " />
+      <Label layoutX="417.0" layoutY="76.0" text="Current Food: " />
+      <Label layoutX="407.0" layoutY="192.0" text="Current Energy: " />
    </children>
 </AnchorPane>
