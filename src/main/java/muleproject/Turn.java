@@ -4,7 +4,7 @@ public class Turn {
     private int turnNumber;
     private int roundNumber;
 
-    public int getTurnNumber () {
+    public int getTurnNumber() {
         return turnNumber;
     }
 

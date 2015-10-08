@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 
@@ -19,8 +20,24 @@ public class StoreScreenController {
     private Button exitButton;
 
     @FXML
-    private void initialize() {
+    private Label muleNum;
 
+    @FXML
+    private Label cash;
+
+    @FXML
+    private Label food;
+
+    @FXML
+    private Label energy;
+
+    public static Turn currentTurn;
+    public static Player currentPlayer;
+
+    @FXML
+    private void initialize() {
+        currentTurn = GridScreenController.turn;
+        currentPlayer = MuleProject.players.getPlayer(currentTurn.getTurnNumber() % 4);
     }
 
     @FXML
