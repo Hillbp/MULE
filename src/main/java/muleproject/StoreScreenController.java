@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Modality;
+import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 /**
@@ -151,15 +152,39 @@ public class StoreScreenController {
 
             MULEtypeDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
-            controller.setMule(new MULE());
+            controller.setMule(new Mule());
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
+        } catch (IOException e) {
+
         }
     }
 
     @FXML
     private void handleSellMule() {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MuleProject.class.getResource("MULEsellDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            Stage primaryStage = (Stage) exitButton.getScene().getWindow();
+            dialogStage.setTitle("Choose MULE to sell");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            MULEsellDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+
+            //Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+
+        }
     }
 }

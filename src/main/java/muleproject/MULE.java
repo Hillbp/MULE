@@ -30,8 +30,8 @@ public class Mule {
         return owner;
     }
 
-    public void setPlayer(Player p) {
-        player = p;
+    public void setOwner(Player p) {
+        owner = p;
     }
     @Override
     public boolean equals(Object o) {

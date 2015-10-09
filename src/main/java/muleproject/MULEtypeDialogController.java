@@ -8,6 +8,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.MenuButton;
 
 public class MULEtypeDialogController {
     
@@ -37,7 +40,7 @@ public class MULEtypeDialogController {
      *
      * @param mule
      */
-    public void setMULE(Mule mule) {
+    public void setMule(Mule mule) {
         this.mule = mule;
     }
 
@@ -46,7 +49,6 @@ public class MULEtypeDialogController {
      */
     @FXML
     private void handleCancel() {
-        StoreScreenController.currentPlayer.removeMule(this.mule);
         dialogStage.close();
     }
 
