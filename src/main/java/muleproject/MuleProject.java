@@ -60,6 +60,6 @@ public class MuleProject extends Application {
     public static void main(String[] args) {
         players = new AllPlayers();
         launch(args);
-    }
+    }//TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
     
 }
