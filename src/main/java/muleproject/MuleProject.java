@@ -46,6 +46,8 @@ public class MuleProject extends Application {
         }
     }
 
+    //comment for testing
+
     public static Property getProperty(int col, int row) {
         return propertyGrid[row][col];
     }
