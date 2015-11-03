@@ -45,6 +45,8 @@ public class GridScreenController {
         landPhase = new LandSelection(this);
     }
 
+
+
     private void calcTurnTime () {
         for (int i = 0; i < 4; i++) {
             startTime = System.currentTimeMillis();

@@ -61,7 +61,7 @@ public class StoreScreenController {
     private void handleBuyFood() {
         Stage dialogStage;
         dialogStage = (Stage) exitButton.getScene().getWindow();
-        if (currentPlayer.getMoney() - 5 > 0) {
+        if (currentPlayer.getMoney() - 5 >= 0) {
             currentPlayer.setMoney(currentPlayer.getMoney() - 5);
             currentPlayer.setFood(currentPlayer.getFood() + 1);
             food.setText("Current food: " + currentPlayer.getFood());
@@ -99,7 +99,7 @@ public class StoreScreenController {
     private void handleBuyEnergy() {
         Stage dialogStage;
         dialogStage = (Stage) exitButton.getScene().getWindow();
-        if (currentPlayer.getMoney() - 10 > 0) {
+        if (currentPlayer.getMoney() - 10 >= 0) {
             currentPlayer.setMoney(currentPlayer.getMoney() - 10);
             currentPlayer.setEnergy(currentPlayer.getEnergy() + 1);
             energy.setText("Current energy: " + currentPlayer.getEnergy());
@@ -121,7 +121,7 @@ public class StoreScreenController {
         if (currentPlayer.getEnergy() > 0) {
             currentPlayer.setEnergy(currentPlayer.getEnergy() - 1);
             currentPlayer.setMoney(currentPlayer.getMoney() + 10);
-            food.setText("Current food: " + currentPlayer.getFood());
+            food.setText("Current energy: " + currentPlayer.getEnergy());
             cash.setText("Current cash: " + currentPlayer.getMoney());
         } else {
             Alert alert = new Alert(AlertType.ERROR);

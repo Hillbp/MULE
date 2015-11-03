@@ -57,7 +57,7 @@ public class MULEtypeDialogController {
      */
     @FXML
     private void handleFood() {
-        if (StoreScreenController.currentPlayer.getMoney() > 125) {
+        if (StoreScreenController.currentPlayer.getMoney() >= 125) {
             mule.setType("food");
             StoreScreenController.currentPlayer.addMule(mule);
             dialogStage.close();
