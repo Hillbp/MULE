@@ -60,6 +60,7 @@ public class MULEtypeDialogController {
         if (StoreScreenController.currentPlayer.getMoney() >= 125) {
             mule.setType("food");
             StoreScreenController.currentPlayer.addMule(mule);
+            currentPlayer.setMoney(currentPlayer.getMoney() - 125);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -76,9 +77,10 @@ public class MULEtypeDialogController {
      */
     @FXML
     private void handleEnergy() {
-        if (StoreScreenController.currentPlayer.getMoney() > 150) {
+        if (StoreScreenController.currentPlayer.getMoney() >= 150) {
             mule.setType("energy");
             StoreScreenController.currentPlayer.addMule(mule);
+            currentPlayer.setMoney(currentPlayer.getMoney() - 150);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -95,9 +97,10 @@ public class MULEtypeDialogController {
      */
     @FXML
     private void handleSmithore() {
-        if (StoreScreenController.currentPlayer.getMoney() > 175) {
+        if (StoreScreenController.currentPlayer.getMoney() >= 175) {
             mule.setType("smithore");
             StoreScreenController.currentPlayer.addMule(mule);
+            currentPlayer.setMoney(currentPlayer.getMoney() - 175);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
