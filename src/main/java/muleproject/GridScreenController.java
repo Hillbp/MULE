@@ -146,5 +146,6 @@ public class GridScreenController {
         dialogStage.setScene(scene);
         dialogStage.show();
     }
+
 }
 

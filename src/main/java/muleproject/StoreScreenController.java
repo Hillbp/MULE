@@ -71,7 +71,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -90,7 +90,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Food");
-            alert.setHeaderText("Not Enough Food for Transcation");
+            alert.setHeaderText("Not Enough Food for Transaction");
             
             alert.showAndWait();
         }
@@ -109,7 +109,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -128,7 +128,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Energy");
-            alert.setHeaderText("Not Enough Energy for Transcation");
+            alert.setHeaderText("Not Enough Energy for Transaction");
             
             alert.showAndWait();
         }
@@ -139,7 +139,7 @@ public class StoreScreenController {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MuleProject.getClass().getResource("MULEtypeDialog.fxml"));
+            loader.setLocation(MuleProject.class.getResource("MULEtypeDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -167,7 +167,7 @@ public class StoreScreenController {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MuleProject.getClass().getResource("MULEsellDialog.fxml"));
+            loader.setLocation(MuleProject.class.getResource("MULEsellDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
