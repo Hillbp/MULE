@@ -70,7 +70,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -89,7 +89,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Food");
-            alert.setHeaderText("Not Enough Food for Transcation");
+            alert.setHeaderText("Not Enough Food for Transaction");
             
             alert.showAndWait();
         }
@@ -108,7 +108,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -127,7 +127,7 @@ public class StoreScreenController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Energy");
-            alert.setHeaderText("Not Enough Energy for Transcation");
+            alert.setHeaderText("Not Enough Energy for Transaction");
             
             alert.showAndWait();
         }

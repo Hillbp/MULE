@@ -19,7 +19,7 @@ public class LandSelection {
         if (current > 3) {
             current = 0;
             loopCheck = true;
-            endLandPhase();
+            //endLandPhase();
         }
         if (currentPlayer() instanceof AIPlayer && !loopCheck) {
             moveAI();
@@ -79,4 +79,5 @@ public class LandSelection {
 
         }
     }
+
 }

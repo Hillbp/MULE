@@ -1,3 +1,4 @@
+import com.sun.corba.se.impl.io.TypeMismatchException;
 import javafx.scene.paint.Color;
 
 import java.util.PriorityQueue;
@@ -64,8 +65,11 @@ public class AllPlayers{
     public PriorityQueue getPriorityQueue() {
         PriorityQueue PQ = new PriorityQueue();
         for (int i = 4; i >= 0; i--) {
-            PQ.add(playerList[i]);
-        }
+            try {
+                PQ.add(playerList[i]);
+            } catch (Exception e) {
+                throw new TypeMismatchException("Error: Wrong array assigned to playerList");
+            }
         return PQ;
     }
 
