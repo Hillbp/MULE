@@ -22,6 +22,7 @@ public class MuleProject extends Application {
     public static AllPlayers players;
     public static Player currentPlayer;
     public static Property[][] propertyGrid;
+    public Turn turn;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
