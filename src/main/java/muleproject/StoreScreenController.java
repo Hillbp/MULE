@@ -13,7 +13,6 @@ import javafx.stage.Modality;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
-
 /**
  * Controller for StoreScreen.
  * @author Christa
@@ -139,7 +138,7 @@ public class StoreScreenController {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MuleProject.getClass().getResource("MULEtypeDialog.fxml"));
+            loader.setLocation(MuleProject.class.getResource("MULEtypeDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
@@ -167,7 +166,7 @@ public class StoreScreenController {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MuleProject.getClass().getResource("MULEsellDialog.fxml"));
+            loader.setLocation(MuleProject.class.getResource("MULEsellDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Create the dialog Stage.
