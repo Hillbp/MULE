@@ -60,7 +60,7 @@ public class MULEtypeDialogController {
         if (StoreScreenController.currentPlayer.getMoney() >= 125) {
             mule.setType("food");
             StoreScreenController.currentPlayer.addMule(mule);
-            StoreScreenController.currentPlayer.setMoney(currentPlayer.getMoney() - 125);
+            StoreScreenController.currentPlayer.setMoney(StoreScreenController.currentPlayer.getMoney() - 125);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -80,7 +80,7 @@ public class MULEtypeDialogController {
         if (StoreScreenController.currentPlayer.getMoney() >= 150) {
             mule.setType("energy");
             StoreScreenController.currentPlayer.addMule(mule);
-            StoreScreenController.currentPlayer.setMoney(currentPlayer.getMoney() - 150);
+            StoreScreenController.currentPlayer.setMoney(StoreScreenController.currentPlayer.getMoney() - 150);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -100,7 +100,7 @@ public class MULEtypeDialogController {
         if (StoreScreenController.currentPlayer.getMoney() >= 175) {
             mule.setType("smithore");
             StoreScreenController.currentPlayer.addMule(mule);
-            StoreScreenController.currentPlayer.setMoney(currentPlayer.getMoney() - 175);
+            StoreScreenController.currentPlayer.setMoney(StoreScreenController.currentPlayer.getMoney() - 175);
             dialogStage.close();
         } else {
             Alert alert = new Alert(AlertType.ERROR);
