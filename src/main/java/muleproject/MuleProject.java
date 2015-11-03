@@ -22,6 +22,7 @@ public class MuleProject extends Application {
     public static AllPlayers players;
     public static Player currentPlayer;
     public static Property[][] propertyGrid;
+    public static Turn turn;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -61,5 +62,10 @@ public class MuleProject extends Application {
         players = new AllPlayers();
         launch(args);
     }
-    
+
+    public void endGame() {
+        if (turn.roundCheck() == false) {
+            //final score screen
+        }
+    }
 }
