@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuButton;
 
+
 public class MULEtypeDialogController {
     
     @FXML
@@ -66,7 +67,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -86,7 +87,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -106,7 +107,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
