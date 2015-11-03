@@ -13,7 +13,6 @@ import javafx.stage.Modality;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
-
 /**
  * Controller for StoreScreen.
  * @author Christa
