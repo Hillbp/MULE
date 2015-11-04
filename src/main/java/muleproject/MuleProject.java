@@ -68,7 +68,7 @@ public class MuleProject extends Application {
 
     private int calcReq() {
         int req = 3;
-        req = req + turn.getRoundNumber / 4;
+        req = req + turn.getRoundNumber() / 4;
         return req;
     }
 
