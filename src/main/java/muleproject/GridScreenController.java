@@ -43,6 +43,17 @@ public class GridScreenController {
         turn = new Turn();
         buttons = pane.getChildren();
         landPhase = new LandSelection(this);
+        for (int i = 0; i < 4; i++) {
+            String color = MuleProject.players.getPlayer(i).getColor();
+            Property[] properties = MuleProject.players.getPlayer(i).getProperties();
+            for (int j = 0; j < properties.length; j++) {
+                if (properties[j] != null) {
+                    Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
+                    buttonChoice.setStyle("-fx-background-color: " + color);
+                    buttonChoice.fire();
+                }
+            }
+        }
     }
 
 
@@ -51,17 +62,6 @@ public class GridScreenController {
         for (int i = 0; i < 4; i++) {
             startTime = System.currentTimeMillis();
             calculateTime(i);
-            String color = MuleProject.players.getPlayer(i).getColor();
-            Property[] properties = MuleProject.players.getPlayer(i).getProperties();
-            //while (endTime > System.currentTimeMillis()){
-            for (int j = 0; j < properties.length; j++) {
-                if (properties[j] != null) {
-                    Button buttonChoice = (Button) getNodeByRowColumnIndex(properties[j].getRow(), properties[j].getCol(), buttons);
-                    buttonChoice.setStyle("-fx-background-color: " + color);
-                    buttonChoice.fire();
-                }
-            }
-            //}
             landPhase.nextTurn();
         }
     }
