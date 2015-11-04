@@ -66,7 +66,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -86,7 +86,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
@@ -106,7 +106,7 @@ public class MULEtypeDialogController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
             alert.setTitle("Not Enough Money");
-            alert.setHeaderText("Not Enough Money for Transcation");
+            alert.setHeaderText("Not Enough Money for Transaction");
             
             alert.showAndWait();
         }
