@@ -121,7 +121,7 @@ public class StoreScreenController {
         if (currentPlayer.getEnergy() > 0) {
             currentPlayer.setEnergy(currentPlayer.getEnergy() - 1);
             currentPlayer.setMoney(currentPlayer.getMoney() + 10);
-            food.setText("Current energy: " + currentPlayer.getEnergy());
+            energy.setText("Current energy: " + currentPlayer.getEnergy());
             cash.setText("Current cash: " + currentPlayer.getMoney());
         } else {
             Alert alert = new Alert(AlertType.ERROR);

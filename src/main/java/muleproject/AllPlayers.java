@@ -70,6 +70,7 @@ public class AllPlayers{
             } catch (Exception e) {
                 throw new TypeMismatchException("Error: Wrong array assigned to playerList");
             }
+        }
         return PQ;
     }
 
