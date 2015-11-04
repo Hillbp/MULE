@@ -27,6 +27,8 @@ public class PubScreenController {
 
     @FXML
     private Button exitButton;
+
+    @FXML
     private Button gambleButton;
 
     @FXML
