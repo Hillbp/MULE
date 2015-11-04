@@ -56,38 +56,6 @@ public class GridScreenController {
         }
     }
 
-
-
-    private void calcTurnTime () {
-        for (int i = 0; i < 4; i++) {
-            startTime = System.currentTimeMillis();
-            calculateTime(i);
-            landPhase.nextTurn();
-        }
-    }
-
-    //TODO Implement food requirements for different rounds
-    private void calculateTime(int i) {
-        Player current = MuleProject.players.getPlayer(i);
-        int req = calcReq();
-        if (current instanceof HumanPlayer) {
-            if (current.getFood() >= req) {
-                current.addFood(-3);
-                endTime = startTime + 50000L;
-            } else if (current.getFood() > 0) {
-                current.setFood(0);
-                endTime = startTime + 30000L;
-            } else {
-                endTime = startTime + 5000L;
-            }
-        }
-    }
-
-    private int calcReq() {
-        //int turnNum = turn.getTurnNumber();
-        return 3;
-    }
-
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
         Button b = (Button) ev.getSource();

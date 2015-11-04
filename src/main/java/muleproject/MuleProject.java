@@ -23,6 +23,8 @@ public class MuleProject extends Application {
     public static Player currentPlayer;
     public static Property[][] propertyGrid;
     public Turn turn;
+    private long startTime;
+    private long endTime;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -45,6 +47,29 @@ public class MuleProject extends Application {
                 propertyGrid[row][col] = new Property(propertyNum, 300, "grass", row, col);
             }
         }
+    }
+
+    //TODO Implement food requirements for different rounds
+    private void calculateTime() {
+        startTime = System.currentTimeMillis();
+        int req = calcReq();
+        if (currentPlayer instanceof HumanPlayer) {
+            if (currentPlayer.getFood() >= req) {
+                currentPlayer.addFood(-3);
+                endTime = startTime + 50000L;
+            } else if (currentPlayer.getFood() > 0) {
+                currentPlayer.setFood(0);
+                endTime = startTime + 30000L;
+            } else {
+                endTime = startTime + 5000L;
+            }
+        }
+    }
+
+    private int calcReq() {
+        int req = 3;
+        req = req + turn.getRoundNumber / 4;
+        return req;
     }
 
     public static Property getProperty(int col, int row) {
