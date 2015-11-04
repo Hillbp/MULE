@@ -37,6 +37,7 @@ public class GridScreenController {
     private long startTime;
     public static long endTime;
     public static Turn turn;
+    public boolean endPhase;
 
     @FXML
     private void initialize() {
@@ -53,7 +54,22 @@ public class GridScreenController {
                     buttonChoice.fire();
                 }
             }
+            /*
+             * Supposed to check if endLandSelection is true, which would only be true
+             * at the end of player 4's selection
+             *
+             * not sure about syntax/what to call next screen on*************************************
+             * also not sure if this should be endLandSelection() or !endLandSelection()
+             * based on the output of endLandSelection method
+             */
+            if (endLandSelection()) {
+                GridScreenController.nextScreen();
+            }
+            //this should end the land selection phase; the town screen will need to be the start
+            //of the regular turns and rounds
         }
+
+
     }
 
     @FXML
@@ -91,6 +107,20 @@ public class GridScreenController {
     @FXML
     private void endTurnButtonPress() throws IOException {
         landPhase.nextTurn();
+    }
+
+    /*
+     * returns boolean value of whether player wants to end their
+     * land selection or not; will only return true if last player says to end it
+     */
+    public boolean endLandSelection() {
+        endPhase = true;
+        for (int i = 0; i < 4; i++) {
+            if (player(i) presses colorButtonPress){
+                endPhase = false;
+            }
+        }
+        return endPhase;
     }
 
     @FXML
