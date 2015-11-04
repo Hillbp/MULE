@@ -13,7 +13,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="91.0" layoutY="129.0" mnemonicParsing="false" text="Buy MULE" />
+      <Button layoutX="91.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleBuyMule" text="Buy MULE" />
       <Button layoutX="384.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleBuyFood" text="Buy Food" />
       <Button layoutX="487.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleSellFood" text="Sell Food" />
       <Button layoutX="380.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleBuyEnergy" text="Buy Energy" />

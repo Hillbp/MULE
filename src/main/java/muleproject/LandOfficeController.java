@@ -33,4 +33,25 @@ public class LandOfficeController {
         dialogStage.show();
     }
 
+    @FXML
+    private void buyLandButtonPress() throws IOException {
+        Stage dialogStage;
+        dialogStage = (Stage) backButton.getScene().getWindow();
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource("TownScreen.fxml"));
+        Scene scene = new Scene(root);
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
+
+    @FXML
+    private void sellLandButtonPress() throws IOException {
+        Stage dialogStage;
+        dialogStage = (Stage) backButton.getScene().getWindow();
+        Parent root;
+        root = FXMLLoader.load(getClass().getResource("TownScreen.fxml"));
+        Scene scene = new Scene(root);
+        dialogStage.setScene(scene);
+        dialogStage.show();
+    }
 }
