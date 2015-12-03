@@ -38,6 +38,7 @@ public class GridScreenController {
     public static long endTime;
     public static Turn turn;
     public boolean endPhase;
+    private boolean landBought;
 
     @FXML
     private void initialize() {
@@ -74,6 +75,7 @@ public class GridScreenController {
 
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
+        landBought = true;
         Button b = (Button) ev.getSource();
         int x = GridPane.getRowIndex(b);
         int y = GridPane.getColumnIndex(b);
@@ -115,11 +117,10 @@ public class GridScreenController {
      */
     public boolean endLandSelection() {
         endPhase = true;
-        for (int i = 0; i < 4; i++) {
-            if (player(i) presses colorButtonPress){
+            if (landBought == true){
                 endPhase = false;
+                landBought = false;
             }
-        }
         return endPhase;
     }
 

@@ -48,8 +48,7 @@ public class MuleProject extends Application {
             }
         }
     }
-
-    //TODO Implement food requirements for different rounds
+    
     private void calculateTime() {
         startTime = System.currentTimeMillis();
         int req = calcReq();
