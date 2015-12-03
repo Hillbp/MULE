@@ -9,6 +9,10 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
+
 
 
 
@@ -22,6 +26,7 @@ public class MuleProject extends Application {
     public static AllPlayers players;
     public static Player currentPlayer;
     public static Property[][] propertyGrid;
+    public static MediaPlayer mediaPlayer;
     public Turn turn;
     private long startTime;
     private long endTime;
@@ -39,6 +44,11 @@ public class MuleProject extends Application {
         Scene scene = new Scene(root, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
+        String path = "The-Human-Abstract-Crossing-The-Rubicon-8-Bit.mp3.mp3";
+        Media media = new Media(new File(path).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+       // mediaView = new MediaView(mediaPlayer);
 
         propertyGrid = new Property[5][9];
         for (int row = 0; row < propertyGrid.length; row++) {

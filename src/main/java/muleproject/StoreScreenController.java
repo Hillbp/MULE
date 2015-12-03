@@ -12,6 +12,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Modality;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
 
 /**
  * Controller for StoreScreen.
@@ -36,6 +39,10 @@ public class StoreScreenController {
 
     public static Turn currentTurn;
     public static Player currentPlayer;
+    public MediaPlayer mediaPlayer;
+    public Media media;
+    public MediaPlayer mediaPlayer2;
+    public Media media2;
 
     @FXML
     private void initialize() {
@@ -44,6 +51,9 @@ public class StoreScreenController {
         energy.setText("Current energy: " + currentPlayer.getEnergy());
         food.setText("Current food: " + currentPlayer.getFood());
         cash.setText("Current cash: " + currentPlayer.getMoney());
+        mediaPlayer = MuleProject.mediaPlayer;
+        //media = mediaPlayer.getMedia();
+        mediaPlayer.pause();
     }
 
     @FXML
@@ -55,6 +65,7 @@ public class StoreScreenController {
         Scene scene = new Scene(root);
         dialogStage.setScene(scene);
         dialogStage.show();
+        mediaPlayer.play();
     }
 
     @FXML
@@ -66,6 +77,10 @@ public class StoreScreenController {
             currentPlayer.setFood(currentPlayer.getFood() + 1);
             food.setText("Current food: " + currentPlayer.getFood());
             cash.setText("Current cash: " + currentPlayer.getMoney());
+            String path = "Cha-ching-sound.mp3";
+            media2 = new Media(new File(path).toURI().toString());
+            mediaPlayer2 = new MediaPlayer(media2);
+            mediaPlayer2.setAutoPlay(true);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
@@ -85,6 +100,10 @@ public class StoreScreenController {
             currentPlayer.setMoney(currentPlayer.getMoney() + 5);
             food.setText("Current food: " + currentPlayer.getFood());
             cash.setText("Current cash: " + currentPlayer.getMoney());
+            String path = "Cha-ching-sound.mp3";
+            media2 = new Media(new File(path).toURI().toString());
+            mediaPlayer2 = new MediaPlayer(media2);
+            mediaPlayer2.setAutoPlay(true);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
@@ -103,7 +122,11 @@ public class StoreScreenController {
             currentPlayer.setMoney(currentPlayer.getMoney() - 10);
             currentPlayer.setEnergy(currentPlayer.getEnergy() + 1);
             energy.setText("Current energy: " + currentPlayer.getEnergy());
-            cash.setText("Current cash: " + currentPlayer.getMoney());            
+            cash.setText("Current cash: " + currentPlayer.getMoney());
+            String path = "Cha-ching-sound.mp3";
+            media2 = new Media(new File(path).toURI().toString());
+            mediaPlayer2 = new MediaPlayer(media2);
+            mediaPlayer2.setAutoPlay(true);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);
@@ -123,6 +146,10 @@ public class StoreScreenController {
             currentPlayer.setMoney(currentPlayer.getMoney() + 10);
             energy.setText("Current energy: " + currentPlayer.getEnergy());
             cash.setText("Current cash: " + currentPlayer.getMoney());
+            String path = "Cha-ching-sound.mp3";
+            media2 = new Media(new File(path).toURI().toString());
+            mediaPlayer2 = new MediaPlayer(media2);
+            mediaPlayer2.setAutoPlay(true);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(dialogStage);

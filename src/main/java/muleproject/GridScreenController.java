@@ -63,15 +63,15 @@ public class GridScreenController {
              * also not sure if this should be endLandSelection() or !endLandSelection()
              * based on the output of endLandSelection method
              */
-            if (endLandSelection()) {
-                GridScreenController.nextScreen();
-            }
+            // if (this.endLandSelection()) {
+            //   this.nextScreen();
+            //}
             //this should end the land selection phase; the town screen will need to be the start
             //of the regular turns and rounds
         }
 
+        }
 
-    }
 
     @FXML
     private void colorButtonPress(ActionEvent ev) throws IOException {
@@ -135,7 +135,7 @@ public class GridScreenController {
         dialogStage.show();
     }
 
-    public void nextScreen() throws IOException {
+    public void nextScreen()  throws IOException{
         turn.nextTurn();
         Stage dialogStage;
         Parent root;
